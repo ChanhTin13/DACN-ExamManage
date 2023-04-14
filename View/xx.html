@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/dung_chung/popup.css">
+    <title>DACN</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://file1.hutech.edu.vn/file/editor/homepage/stories/hinh34/logo%20CMYK-01.png" alt="">
+            </div>
+            <div class="img-and-name">
+                <img src="https://media.gqmagazine.fr/photos/5c768b171109c5304e975cae/16:9/w_1280,c_limit/dragon%20ball.png"
+                    alt="">
+                <div class="name"><a>Broly</a> </div>
+
+            </div>
+            <ul class="item-container">
+                <li class="item">
+                    <i class="fa-solid fa-house-user"></i>
+                    <span href="#">Trang chủ</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-user"></i>
+                    <span href="profile.html">Hồ sơ cá nhân</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-users"></i>
+                    <span href="#">Sinh viên</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span href="#">Ngân hàng đề</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-inbox"></i>
+                    <span href="#">Tổ chức thi</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-file"></i>
+                    <span href="#">Kết quả thi</sp>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span href="#">Thống kê</span>
+                </li>
+                <li class="item" id="collapse">
+                    <i class="fa-solid fa-gears"></i>
+                    <span href="#">Thông tin thi</span>
+                    <div class="collapse-container">
+                        <ul class="item-collapse-container">
+                            <li class="item-collapse">
+                                <a>Môn thi</a>
+                            </li>
+                            <li class="item-collapse">
+                                <a>Học kỳ</a>
+                            </li>
+                            <li class="item-collapse">
+                                <a>Ca thi</a>
+                            </li>
+                            <li class="item-collapse">
+                                <a>Phòng thi</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="item">
+                    <i class="fa-sharp fa-solid fa-right-from-bracket fa-flip-horizontal"></i>
+                    <span href="#">Đăng xuất</span>
+                </li>
+            </ul>
+        </div>
+
+        
+        <div class="main-panel">
+            <div class="content">
+                <button id="btn-add">them</button>
+                <form>
+                    <div class="popup-container" id="popup-add-container">
+                        <div class="popup-model" id="popup-model-add">
+                            <div class="popup-model-header">
+                                <h3>Thêm Môn Học</h3> 
+                            </div>
+
+                            <div id="popup-model-body">
+                                <div class="one-row-attribute">
+                                    <div class="attribute-name"><label for=""></label>Tên môn học:</div>
+                                    <input class="attribute-input" type="text" name="">
+                                </div>
+                                <div class="one-row-attribute">
+                                    <div class="attribute-name"><label for="">Số tín chỉ:</label></div>
+                                    <input class="attribute-input" type="text" name="">
+                                </div>
+                            </div>
+
+                            <div class="popup-submit">
+                                <input class="create-btn" type="submit" value="Tạo">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const btn_add = document.getElementById('btn-add');
+
+        const popup_add_container=document.getElementById('popup-add-container');
+        const popup_model_add = document.getElementById('popup-model-add');
+
+        btn_add.addEventListener('click', ()=>{
+            popup_add_container.classList.toggle("show-popup");
+        });
+
+        popup_add_container.addEventListener('click', (e)=>{
+            if( !popup_model_add.contains(e.target)){
+                popup_add_container.classList.remove('show-popup');
+            } 
+        });
+    </script>
+</body>
+
+</html>

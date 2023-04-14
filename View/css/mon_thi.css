@@ -1,0 +1,46 @@
+/* Filter */
+#subject-filter{
+    border: 1px solid black;
+    padding-bottom: 15px;
+}
+#subject-filter span{
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 10px; 
+    text-transform: uppercase;
+}
+.filter{
+    margin-top: 15px;
+}
+.one-row-filter{
+    display: flex;
+    margin-bottom: 10px;
+}
+.one-filter{ 
+    display: flex;
+    width: 300px;
+    margin: 5px 10px; 
+}
+.filter-name{
+    text-align: right;
+    width: 40%; 
+    margin-right: 5px; 
+    font-size: 18px;
+}
+.filter-input{
+    width: 70%; 
+}
+.filter-input input{
+    width: 150px;
+    height: 20px;
+}
+.filter-input select{
+    width: 150px;
+    height: 24px;
+}
+/*button container*/
+.btn-subject-container{
+    margin: 20px 0px;
+}
+/*DataTable Pagination*/
+ 

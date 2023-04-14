@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tổ chức thi</h2>
+<div>Số môn: @ViewBag.so_mon</div>
+<div>Ds các môn chưa có đề: @ViewBag.x</div>
+<div>Chọn ngày bắt đầu
+    <input type="date" />
+</div>
+<a href="@Url.Action("tao","ToChucThi")"><input type="submit" value="Tạo" /></a>

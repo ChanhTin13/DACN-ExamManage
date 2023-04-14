@@ -1,0 +1,70 @@
+body{
+    margin: 0px auto; 
+}
+#wrapper{
+    background-color: #e7e7f1;
+    margin: 0px auto;
+    max-width: 960px; 
+    min-height: 100vh;
+}
+#result-container{ 
+    padding: 5px 25px;
+} 
+#result-container h2{
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+}
+#result-info{  
+    border-bottom: 1px solid #bebebe;
+    padding-left: 60px;
+    padding-bottom: 10px; 
+}
+.result-info-row{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.one-row-attribute{
+    width: 50%;
+    padding: 5px 10px;
+    margin: 5px 0px;
+    /* border: 1px solid #000; */
+    display: flex;
+}
+.attribute-name{
+    width: 30%;
+    text-align: left; 
+    margin-right: 10px; 
+    font-size: 20px; 
+}
+.attribute-info{
+    width: 60%;
+    text-align: left;
+    font-size: 20px; 
+}
+/*khung kết quả*/
+.one-row-result{
+    display: flex;  
+    margin: 20px 0px; 
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+.one-ques-result{
+    flex-basis: 20%;
+    display: flex;
+    font-size: 20px;
+    width: 20%; 
+}
+.one-ques-result p{
+    margin-right: 10px;
+}
+.icon{
+    width: 25px;
+}
+ #exactly{
+    fill: rgb(36, 130, 56);
+}
+#wrong{
+    fill: #db3636;
+}

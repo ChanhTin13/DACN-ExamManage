@@ -1,0 +1,178 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ket qua thi</h2>
+<link href="~/Assets/admin/css/dung_chung/table2.css" rel="stylesheet" />
+<div class="inout-row">
+    <div>
+        <label for="subject-select">Môn học:</label>
+        <select name="subject-select" id="subject-select" style="width: 200px;" onchange="changeOption()">
+        </select>
+    </div>
+</div>
+<div class="chart-container" style="display:flex;">
+    <canvas id="myChart" style="width:100%;max-width:500px"></canvas>
+
+    <canvas id="PieChart" style="width:100%;max-width:250px"></canvas>
+</div>
+
+<div class="data-table-container">
+    <div class="row">
+        <span>Danh sách kết quả</span>
+
+        <div class="row-btn">
+            <button onclick="clearD();" id="btn-file-uploader" type="button">Xuất File Thống Kê</button>
+        </div>
+    </div>
+    <div id="custom-data-table">
+        <div>
+            <div class="choose-num-showed-row-container">
+                <lable>
+                    Hiển thị
+                    <select name="chon-so-luong-hien-thi" id="chon-so-luong-hien-thi">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                    </select>
+                    cột
+                </lable>
+            </div>
+        </div>
+        <div style="max-height:400px;overflow:auto;">
+            <table class="table table-striped">
+                <thead>
+                    <tr style="border-top: 1px solid #dddddd;">
+                        <th>MSSV</th>
+                        <th>Họ tên</th>
+                        <th>Mã đề</th>
+                        <th>Điểm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     
+                    <tr>
+                        <td colspan="4" style="text-align: center !important ;font-weight: bold;">
+                            Không
+                            có dữ liệu
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="  khung-pagination">
+            <div class="showing-x-to-y">Hiển thị 1-10 trên <div id="so_luong_kq" style="margin:0px 10px"></div> kết quả</div>
+            <div class="dataTable_paginate">
+                <ul class="pagination">
+
+                    <li class="li-pagination ">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li class="li-pagination">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M15.75 19.5L8.25 12l7.5-7.5" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="li-pagination  choosed"><a href="#">1</a></li>
+                    <li class="li-pagination "><a href="#">2</a></li>
+                    <li class="li-pagination "><a href="#">3</a></li>
+                    <li class="li-pagination "><a href="#">4</a></li>
+                    <li class="li-pagination "><a href="#">5</a></li>
+
+                    <li class="li-pagination ">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li class="li-pagination">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="~/Assets/admin/js/kq_thi/kq_thi.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script type="text/javascript">
+    var xValues = ["0", "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5", "6", "6.5", "7", "7.5", "8", "8.5", "9", "9.5", "10"];
+    var yValues = [2, 5, 2, 1, 1, 1, 1, 1, 1, 11, 1, 1, 1, 6, 11, 1, 1, 1, 1, 9, 10];
+    var barColors = ["red", "red", "red", "red", "red", "red", "red", "red", "red", "orange", "orange", "orange", "blue", "blue", "blue", "blue", "green", "green", "green", "green", "green"];
+
+    new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: { display: false },
+            title: {
+                display: true,
+                text: "Thống kê điểm"
+            }
+        }
+    });
+</script>
+
+@*<script>
+    var xValues = ["Bồ Đào Nha", "France", "Spain", "USA", "Argentina"];
+    var yValues = [55, 49, 44, 24, 15];
+    var barColors = [
+        "#b91d47",
+        "#00aba9",
+        "#2b5797",
+        "#e8c3b9",
+        "#1e7145"
+    ];
+
+    new Chart("PieChart", {
+        type: "pie",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "Tỉ lệ cá độ world cup 2022"
+            }
+        }
+    });
+</script>*@

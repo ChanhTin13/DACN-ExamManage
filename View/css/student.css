@@ -1,0 +1,129 @@
+/* .student-page{ 
+    border: 1px solid black;
+} */
+/*Nút thêm sv*/
+.btn-add-student-container{
+    height: 90px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.btn-add-student-container button{
+    width: 140px;
+    height: 40px; 
+    margin: 5px 10px;
+    cursor: pointer;
+    border-color: rgb(120, 120, 213);
+    color: #fff;
+    font-size: 16px;
+    background-color: rgb(114, 176, 231);
+}
+/*Lọc sinh viên*/
+.student-filter{
+    border: 1px solid black;
+    padding-bottom: 15px;
+}
+.student-filter span{
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 20px; 
+}
+.filter{
+    margin-top: 15px;
+}
+.one-row-filter{
+    display: flex;
+    margin-bottom: 10px;
+}
+.one-student-filter{
+    display: flex;
+    width: 300px;
+    margin: 5px 10px; 
+}
+.student-filter-name{
+    text-align: right;
+    width: 40%; 
+    margin-right: 5px; 
+    font-size: 18px;
+}
+.student-filter-input{
+    width: 70%; 
+}
+.student-filter-input input{
+    width: 150px;
+    height: 20px;
+}
+.student-filter-input select{
+    width: 150px;
+    height: 24px;
+}
+
+/*Danh sách sinh viên*/
+.data-table-container{
+    margin-top: 10px;
+}
+.data-table-container span{
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0px 20px; 
+    text-transform: uppercase;
+}
+/* #custom-data-table{
+    height: 400px;
+}  */
+.choose-num-showed-row-container{
+    margin-top : 15px
+}
+table{
+    width: 100%; 
+    border-spacing: 0; 
+    margin-top: 15px;
+    border-bottom: 1px solid #dddddd;
+    scroll-behavior: smooth;
+}
+table thead th{
+    text-align: left;
+}
+
+.table.table-striped tbody td{
+    border-top: 1px solid #dddddd;
+} 
+td,th{
+    border-collapse: collapse;
+    padding: 10px 15px;
+}
+
+.table.table-striped tbody tr:nth-child(odd){
+    background: #f2f2f2;
+}
+
+.khung-pagination{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 15px;
+}
+
+ul.pagination{
+    display: flex;
+    font-size: 20px;
+    border: 0.5px solid #bebebe;
+    white-space: nowrap; 
+}
+ul.pagination li{
+    padding: 8px 8px;
+    border: 1px solid #bebebe; 
+}
+ul.pagination li.li-pagination  a{
+    margin: 5px 5px;
+    width: 30px;
+    color: #0d6efd;
+}  
+ul.pagination li.li-pagination.not-choosable a{ 
+    color: #000;
+}
+ul.pagination li.li-pagination.choosed{
+    background: #0d6efd;
+}
+ul.pagination li.li-pagination.choosed a{
+    color: #fff;
+}

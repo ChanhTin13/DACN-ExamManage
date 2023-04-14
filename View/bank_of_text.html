@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/bank_of_test.css">
+    <link rel="stylesheet" href="css/table2.css">
+    <link rel="stylesheet" href="css/dung_chung/popup.css">
+    <link rel="stylesheet" href="css/dung_chung/file_upload.css">
+    <title>DACN</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://file1.hutech.edu.vn/file/editor/homepage/stories/hinh34/logo%20CMYK-01.png" alt="">
+            </div>
+            <div class="img-and-name">
+                <img src="https://media.gqmagazine.fr/photos/5c768b171109c5304e975cae/16:9/w_1280,c_limit/dragon%20ball.png"
+                    alt="">
+                <div class="name"><a>Broly</a> </div>
+
+            </div>
+            <ul class="item-container">
+                <li class="item">
+                    <i class="fa-solid fa-house-user"></i>
+                    <span href="#">Trang chủ</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-user"></i>
+                    <span href="#">Hồ sơ cá nhân</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-users"></i>
+                    <span href="#">Sinh viên</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span href="#">Ngân hàng đề</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span href="#">Tổ chức thi</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-file"></i>
+                    <span href="#">Kết quả thi</sp>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span href="#">Thống kê</span>
+                </li>
+                <li class="item" id="collapse">
+                    <i class="fa-solid fa-gears"></i>
+                    <span href="#">Thông tin thi</span>
+                    <div class="collapse-container">
+                        <ul class="item-collapse-container">
+                            <li class="item-collapse">
+                                <a>Môn thi</a>
+                            </li>
+                            <li class="item-collapse">
+                                <a>Học kỳ</a>
+                            </li>
+                            <li class="item-collapse">
+                                <a>Ca thi</a>
+                            </li>
+                            <li class="item-collapse">
+                                <a>Phòng thi</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="item">
+                    <i class="fa-sharp fa-solid fa-right-from-bracket fa-flip-horizontal"></i>
+                    <span href="#">Đăng xuất</span>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="main-panel">
+            <div class="content">
+                <input type="file" name="ss" id="vvv">
+                <div class="bank-test-container">
+                    <div class="bank-filter-container">
+                        <span>Lọc đề theo:</span>
+                        <form action="">
+                            <div class="one-bank-block-container">
+                                <div class="one-bank-block">
+                                    <div class="one-bank-row">
+                                        <div class="one-bank-filter">
+                                            <div class="bank-filter-name">
+                                                <label for="subject">Môn:</label>
+                                            </div>
+                                            <div class="bank-filter-input">
+                                                <input type="text" id="subject" name="subject">
+                                            </div>
+                                        </div>
+                                        <div class="one-bank-filter">
+                                            <div class="bank-filter-name">
+                                                <label for="test-id">Mã đề:</label>
+                                            </div>
+                                            <div class="bank-filter-input">
+                                                <input type="text" id="test-id" name="test-id">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="one-bank-row">
+                                        <div class="one-bank-filter">
+                                            <div class="bank-filter-name">
+                                                <label for="semester">Kỳ:</label>
+                                            </div>
+                                            <div class="bank-filter-input">
+                                                <input type="text" id="semester" name="semester">
+                                            </div>
+                                        </div>
+                                        <div class="one-bank-filter">
+                                            <div class="bank-filter-name">
+                                                <label for="year">Năm học:</label>
+                                            </div>
+                                            <div class="bank-filter-input">
+                                                <input type="text" id="year" name="year">
+                                            </div>
+                                        </div>
+                                        <div class="btn-filter">
+                                            <button>Lọc >></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="data-table-container">
+                        <div class="row">
+                            <span>đề thi của khung 1 môn toán</span>
+                            <div class="row-btn">
+                                <input type="submit" id="btn-them-de" value="Thêm đề">
+                            </div>
+
+                        </div>
+                        <div id="custom-data-table">
+                            <div>
+                                <div class="choose-num-showed-row-container">
+                                    <lable>
+                                        Hiển thị
+                                        <select name="chon-so-luong-hien-thi" id="chon-so-luong-hien-thi">
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                        cột
+                                    </lable>
+                                </div>
+                            </div>
+                            <div style="max-height:400px;overflow:auto;">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr style="border-top: 1px solid #dddddd;">
+                                            <th>STT</th>
+                                            <th>Mã đề</th>
+                                            <th>Ngày sửa gần nhất</th>
+                                            <th>Môn</th>
+                                            <th>Số câu hỏi</th>
+                                            <th colspan="2">Tác vụ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>151</td>
+                                            <td>kt lt c++ hk2</td>
+                                            <td>Lập trình C++</td>
+                                            <td>60p</td>
+                                            <td>2</td>
+                                            <td class="table-delete-btn-column">
+                                                <svg id="icon-delete" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="w-6 h-6 icon">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                                                </svg>
+                                            </td>
+                                            <td class="table-edit-btn-column">
+                                                <svg id="icon-edit" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="w-6 h-6 icon">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                                </svg>
+                                            </td>
+                                            <td class="table-delete-btn-column">
+                                                <svg id="icon-delete" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="w-6 h-6 icon">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                                </svg>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>151</td>
+                                            <td>kt lt c++ hk2</td>
+                                            <td>Lập trình C++</td>
+                                            <td>60p</td>
+                                            <td>2</td>
+                                            <td class="table-delete-btn-column">
+                                                <svg id="icon-delete" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="w-6 h-6 icon">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                                                </svg>
+                                            </td>
+                                            <td class="table-edit-btn-column">
+                                                <svg id="icon-edit" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="w-6 h-6 icon">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                                </svg>
+                                            </td>
+                                            <td class="table-delete-btn-column">
+                                                <svg id="icon-delete" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="w-6 h-6 icon">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                                </svg>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>151</td>
+                                            <td>kt lt c++ hk2</td>
+                                            <td>Lập trình C++</td>
+                                            <td>60p</td>
+                                            <td>2</td>
+                                            <td class="table-delete-btn-column">
+                                                <svg id="icon-delete" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="w-6 h-6 icon">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                                                </svg>
+                                            </td>
+                                            <td class="table-edit-btn-column">
+                                                <svg id="icon-edit" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="w-6 h-6 icon">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                                </svg>
+
+                                            </td>
+                                            <td class="table-delete-btn-column">
+                                                <svg id="icon-delete" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                    class="w-6 h-6 icon">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
+                                                </svg>
+
+                                            </td>
+                                        </tr>
+ 
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="  khung-pagination">
+                                <div class="showing-x-to-y">Hiển thị 1-10 trên 50 kết quả</div>
+                                <div class="dataTable_paginate">
+                                    <ul class="pagination">
+
+                                        <li class="li-pagination ">
+                                            <a href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+                                                </svg>
+                                            </a>
+                                        </li>
+
+                                        <li class="li-pagination">
+                                            <a href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li class="li-pagination  choosed"><a href="#">1</a></li>
+                                        <li class="li-pagination "><a href="#">2</a></li>
+                                        <li class="li-pagination "><a href="#">3</a></li>
+                                        <li class="li-pagination "><a href="#">4</a></li>
+                                        <li class="li-pagination "><a href="#">5</a></li>
+
+                                        <li class="li-pagination ">
+                                            <a href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                                </svg>
+                                            </a>
+                                        </li>
+
+                                        <li class="li-pagination">
+                                            <a href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- pop up -->
+                <form>
+                    <div class="popup-container" id="popup-add-container">
+                        <div class="popup-model" id="popup-model-add">
+                            <div class="popup-model-header">
+                                <h3 id="h3-add">Thêm Đề thi</h3>
+                                <h3 class="you-hide" id="h3-update">Sửa Đề thi</h3>
+                                <h3 id="quit">&times;</h3>
+                            </div>
+
+                            <div class="popup-model-body">
+
+                                <div class="card">
+                                    <div class="top">
+                                        <p>Chỉ hỗ trợ file word: .doc, .docx ,...</p>
+                                        <button type="button">Lưu</button>
+                                    </div>
+
+                                    <div class="drag-area">
+                                        <span class="visible">
+                                            Kéo thả file vào đây hoặc
+                                            <span class="select" role="button">Chọn</span>
+                                        </span>
+                                        <span class="on-drop">Drop images here</span>
+                                        <input name="file" type="file" class="file"
+                                            accept=".doc, .docx, application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                                            multiple />
+                                    </div>
+
+                                    <!-- IMAGE PREVIEW CONTAINER -->
+                                    <div class="container"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+
+            </div>
+        </div>
+    </div>
+    <script>
+        const btn_add = document.getElementById('btn-them-de');
+
+        const popup_add_container = document.getElementById('popup-add-container');
+        const popup_model_add = document.getElementById('popup-model-add');
+        const quit = document.getElementById('quit');
+
+        btn_add.addEventListener('click', () => {
+            popup_add_container.classList.toggle("show-popup");
+        });
+
+        quit.addEventListener('click', (e) => {
+            popup_add_container.classList.remove('show-popup');
+        });
+    </script>
+    <script src="js/dung_chung/file_upload.js"></script>
+</body>
+
+</html>

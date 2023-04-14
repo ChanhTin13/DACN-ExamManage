@@ -1,0 +1,99 @@
+/*DataTable Pagination*/
+.data-table-container{
+    margin-top: 10px; 
+    margin-bottom: 30px;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+}
+.row-btn{
+    display: flex;
+}
+.row-btn .search-icon svg{
+    width:40px;
+}
+
+.row-btn input{
+    padding: 5px 8px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid rgb(40, 40, 40);
+} 
+.data-table-container span{
+    font-size: 22px;
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+/* #custom-data-table{
+    height: 500px;
+}  */
+.choose-num-showed-row-container{
+    margin-top : 15px
+}
+table{
+    width: 100%; 
+    border-spacing: 0; 
+    margin-top: 15px;
+    border-bottom: 1px solid #dddddd;
+    scroll-behavior: smooth;
+}
+table thead th{
+    text-align: left;
+}
+
+.table.table-striped tbody td{
+    border-top: 1px solid #dddddd;
+} 
+th{ 
+    text-align: center !important;
+}
+td,th{
+    text-align: center;
+    border-collapse: collapse;
+    padding: 10px 15px;
+}
+
+.table.table-striped tbody tr:nth-child(odd){
+    background: #f2f2f2;
+}
+
+.khung-pagination{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 15px;
+}
+
+ul.pagination{
+    display: flex;
+    font-size: 20px; 
+    align-items: center; 
+    margin: auto auto;
+    flex-wrap: wrap; 
+}
+ul.pagination li{
+    padding: 5px 10px;  
+    border-radius: 10px;
+}
+ul.pagination li.li-pagination  a{  
+    color: #0d6efd;
+}   
+ul.pagination li.choosed{
+    background: #0d6efd;
+}
+ul.pagination li.choosed a{
+    color: #fff;
+}
+.li-pagination a{
+    display: flex;
+    align-items: center;
+}
+.icon{
+    width: 20px; 
+}
+#icon-edit{
+    fill: #66cb5a;
+}
+#icon-delete{
+    fill: rgb(228, 89, 89);
+}

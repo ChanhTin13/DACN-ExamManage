@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/table2.css">
+    <link rel="stylesheet" href="css/dung_chung/popup.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://file1.hutech.edu.vn/file/editor/homepage/stories/hinh34/logo%20CMYK-01.png" alt="">
+            </div>
+            <div class="img-and-name">
+                <img src="https://media.gqmagazine.fr/photos/5c768b171109c5304e975cae/16:9/w_1280,c_limit/dragon%20ball.png"
+                    alt="">
+                <div class="name"><a>Broly</a> </div>
+
+            </div>
+            <ul class="item-container">
+                <li class="item">
+                    <i class="fa-solid fa-house-user"></i>
+                    <span href="#">Trang chủ</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-user"></i>
+                    <span href="profile.html">Hồ sơ cá nhân</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-users"></i>
+                    <span href="#">Sinh viên</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span href="#">Ngân hàng đề</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-inbox"></i>
+                    <span href="#">Tổ chức thi</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-file"></i>
+                    <span href="#">Kết quả thi</sp>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span href="#">Thống kê</span>
+                </li>
+                <li class="item" id="collapse">
+                    <i class="fa-solid fa-gears"></i>
+                    <span href="#">Thông tin thi</span>
+                    <div class="collapse-container">
+                        <ul class="item-collapse-container">
+                            <li class="item-collapse">
+                                <a>Môn thi</a>
+                            </li>
+                            <li class="item-collapse">
+                                <a>Học kỳ</a>
+                            </li>
+                            <li class="item-collapse">
+                                <a>Ca thi</a>
+                            </li>
+                            <li class="item-collapse">
+                                <a>Phòng thi</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="item">
+                    <i class="fa-sharp fa-solid fa-right-from-bracket fa-flip-horizontal"></i>
+                    <span href="#">Đăng xuất</span>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="main-panel">
+            <div class="content">
+                <div class="inout-row">
+                    <div>
+                        <label for="subject-select">Môn học:</label>
+                        <select name="subject-select" id="subject-select" style="width: 200px;">
+                            <option value="volvo">1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="chart-container" style="display:flex;">
+                    <canvas id="myChart" style="width:100%;max-width:500px"></canvas>
+
+                    <canvas id="PieChart" style="width:100%;max-width:250px"></canvas>
+                </div>
+
+                <div class="data-table-container">
+                    <div class="row">
+                        <span>Danh sách kết quả</span>
+
+                    </div>
+                    <div id="custom-data-table">
+                        <div>
+                            <div class="choose-num-showed-row-container">
+                                <lable>
+                                    Hiển thị
+                                    <select name="chon-so-luong-hien-thi" id="chon-so-luong-hien-thi">
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                    cột
+                                </lable>
+                            </div>
+                        </div>
+                        <div style="max-height:400px;overflow:auto;">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr style="border-top: 1px solid #dddddd;">
+                                        <th>MSSV</th>
+                                        <th>Họ tên</th>
+                                        <th>Mã đề</th>
+                                        <th>Điểm</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td>12312</td>
+                                        <td>nguyen van a</td>
+                                        <td>001</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" style="text-align: center !important ;font-weight: bold;">Không
+                                            có dữ liệu
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="  khung-pagination">
+                            <div class="showing-x-to-y">Hiển thị 1-10 trên 50 kết quả</div>
+                            <div class="dataTable_paginate">
+                                <ul class="pagination">
+
+                                    <li class="li-pagination ">
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+                                            </svg>
+                                        </a>
+                                    </li>
+
+                                    <li class="li-pagination">
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="li-pagination  choosed"><a href="#">1</a></li>
+                                    <li class="li-pagination "><a href="#">2</a></li>
+                                    <li class="li-pagination "><a href="#">3</a></li>
+                                    <li class="li-pagination "><a href="#">4</a></li>
+                                    <li class="li-pagination "><a href="#">5</a></li>
+
+                                    <li class="li-pagination ">
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                            </svg>
+                                        </a>
+                                    </li>
+
+                                    <li class="li-pagination">
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script type="text/javascript">
+        var xValues = ["0", "0.5", "1", "1.5", "2", "2.5", "3", "3.5", "4", "4.5", "5", "5.5", "6", "6.5", "7", "7.5", "8", "8.5", "9", "9.5", "10"];
+        var yValues = [0, 5, 2, 1, 1, 1, 1, 1, 1, 11, 1, 1, 1, 6, 11, 1, 1, 1, 1, 9, 10];
+        var barColors = ["red", "red", "red", "red", "red", "red", "red", "red", "red", "orange", "orange", "orange", "blue", "blue", "blue", "blue", "green", "green", "green", "green", "green"];
+
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "Thống kê điểm"
+                }
+            }
+        });
+    </script>
+
+    <script>
+        var xValues = ["Bồ Đào Nha", "France", "Spain", "USA", "Argentina"];
+        var yValues = [55, 49, 44, 24, 15];
+        var barColors = [
+            "#b91d47",
+            "#00aba9",
+            "#2b5797",
+            "#e8c3b9",
+            "#1e7145"
+        ];
+
+        new Chart("PieChart", {
+            type: "pie",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Tỉ lệ cá độ world cup 2022"
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

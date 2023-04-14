@@ -1,0 +1,96 @@
+﻿@model DACN_To_chuc_thi.Models.DTO.tt_kq_thi
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="~/Assets/admin/css/exam_result.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <div id="result-container">
+            <h2>Kết quả bài thi</h2>
+            <div id="result-info">
+                <div class="result-info-row">
+                    <div class="one-row-attribute">
+                        <div class="attribute-name">Sinh viên:</div>
+                        <div class="attribute-info" id="hoten">sv19111</div>
+                    </div>
+                    <div class="one-row-attribute">
+                        <div class="attribute-name">MSSV:</div>
+                        <div class="attribute-info" id="mssv">19111</div>
+                    </div>
+                </div>
+                <div class="result-info-row">
+                    <div class="one-row-attribute">
+                        <div class="attribute-name">Môn thi:</div>
+                        <div class="attribute-info" id="tenmon">TIẾNG ANH 1</div>
+                    </div>
+                    <div class="one-row-attribute">
+                        <div class="attribute-name">Số câu:</div>
+                        <div class="attribute-info" id="socau">6</div>
+                    </div>
+                </div>
+                <div class="result-info-row">
+                    <div class="one-row-attribute">
+                        <div class="attribute-name">Số câu đúng:</div>
+                        <div class="attribute-info" id="scd"></div>
+                    </div>
+                    <div class="one-row-attribute">
+                        <div class="attribute-name">Số câu sai:</div>
+                        <div class="attribute-info"></div>
+                    </div>
+                </div>
+                <div class="result-info-row">
+                    <div class="one-row-attribute">
+                        <div class="attribute-name">Điểm:</div>
+                        <div class="attribute-info">@Model.diem</div>
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <div class="one-row-result">
+                    @{ int i = 0;}
+                    @foreach (var item in Model.lst_bch)
+                    {
+                        foreach (var x in item.CauHoi_LuaChon)
+                        {
+                            if (Model.lst_int[i] == 1)
+                            {
+                                <div class="one-ques-result">
+                                    <p>Câu @i</p>
+                                    <svg id="exactly" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path d="M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                                    </svg>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="one-ques-result">
+                                    <p>Câu @i</p>
+                                    <svg id="wrong" class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                        <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z" />
+                                    </svg>
+                                </div>
+                            }
+                            i++;
+                        }
+                    }
+                     
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="~/Assets/student/thi/kq_thi.js"></script>

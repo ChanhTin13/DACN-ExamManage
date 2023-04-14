@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A05707F3-9CBF-4DB3-8593-A3A1F7E8E24E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DACN_To_chuc_thi</RootNamespace>
+    <AssemblyName>DACN_To_chuc_thi</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44332</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1004\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\AdminModels\AccountModel.cs" />
+    <Compile Include="Areas\AdminModels\LoginModel.cs" />
+    <Compile Include="Areas\AdminModels\SubjectPageModel.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Code\getDataFromExcelToList.cs" />
+    <Compile Include="Areas\Admin\Code\getDataFromFileWordToList.cs" />
+    <Compile Include="Areas\Admin\Code\SessionHelper.cs" />
+    <Compile Include="Areas\Admin\Code\UserSession.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdHomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminLoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DsHocPhanController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ListTestController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CreateExamController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ExamResultController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FrameTestController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PrivateInfoController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ReviewTestController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Shirt_and_RoomController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StudentController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SubjectController.cs" />
+    <Compile Include="Areas\Admin\Controllers\thong_tin_to_thiController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ToChucThiController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ToThiController.cs" />
+    <Compile Include="Areas\Admin\CusModel\DsHocPhan\CusDsHocPhan.cs" />
+    <Compile Include="Areas\Admin\CusModel\File\FileInfo.cs" />
+    <Compile Include="Areas\Admin\CusModel\GetSet\get_set_int.cs" />
+    <Compile Include="Areas\Admin\CusModel\GetSet\get_set_ListTest.cs" />
+    <Compile Include="Areas\Admin\CusModel\GetSet\get_set_ReviewTest.cs" />
+    <Compile Include="Areas\Admin\CusModel\GetSet\get_set_thong_tin_to_thi.cs" />
+    <Compile Include="Areas\Admin\CusModel\khung_de_thi\Cus_FrameTest.cs" />
+    <Compile Include="Areas\Admin\CusModel\Student\CusStudent.cs" />
+    <Compile Include="Areas\Admin\CusModel\Test\CauHoi_LuaChon.cs" />
+    <Compile Include="Areas\Admin\CusModel\Test\CusTest.cs" />
+    <Compile Include="Areas\Admin\CusModel\Test\MotBoCauHoi.cs" />
+    <Compile Include="Areas\Admin\CusModel\Test\OneTest.cs" />
+    <Compile Include="Areas\Admin\CusModel\ToChucThi\CusMonThi_NhomHp.cs" />
+    <Compile Include="Areas\Admin\CusModel\ToChucThi\CusMon_Sodethi.cs" />
+    <Compile Include="Areas\Admin\CusModel\ToChucThi\layDsDeThiTheoIdMon.cs" />
+    <Compile Include="Areas\Admin\CusModel\ToChucThi\chiaDe.cs" />
+    <Compile Include="Areas\Admin\CusModel\To_thi\CusToThi.cs" />
+    <Compile Include="Areas\Admin\CusModel\To_thi\ThongTinToThi.cs" />
+    <Compile Include="Controllers\ChonMonThiController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentLoginController.cs" />
+    <Compile Include="Controllers\ThiController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\bai_lam.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\bo_cau_hoi.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cau_hoi.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ct_bai_lam.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DACN_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DACN_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DACN_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DACN_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DACN_Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataProvider.cs" />
+    <Compile Include="Models\de_thi.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DTO\cjd.cs" />
+    <Compile Include="Models\DTO\FileModel.cs" />
+    <Compile Include="Models\DTO\SubjectDTO.cs" />
+    <Compile Include="Models\DTO\thong_tin_khi_thi.cs" />
+    <Compile Include="Models\DTO\tt_kq_thi.cs" />
+    <Compile Include="Models\getAllTestByIdFrame_Result.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getListOptionByIdQuestion_Result.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getListQuestionByIdGroupTest_Result.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getTestGroupContentByIdTest_Result.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\getTestInfoById_Result.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\get_all_subject_Result.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\get_student_by_pagination_Result.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\get_subject_by_pagination_Result.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ket_qua.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\khung_de_thi.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\layThongTinTrcKhiThiBangMssv_Result.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\lua_chon.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mon.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Nguoi_dung.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\phieu_du_thi.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\phong_thi.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sinh_vien.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\stuGetById_Result.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Thong_tin_hoc_phan.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\to_thi.cs">
+      <DependentUpon>DACN_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\admin\css\bank_of_test.css" />
+    <Content Include="Assets\admin\css\ca_thi_va_phong_thi.css" />
+    <Content Include="Assets\admin\css\chon_de_thi.css" />
+    <Content Include="Assets\admin\css\de_thi.css" />
+    <Content Include="Assets\admin\css\ds_cau_hoi.css" />
+    <Content Include="Assets\admin\css\dung_chung\data_table.css" />
+    <Content Include="Assets\admin\css\dung_chung\file_upload.css" />
+    <Content Include="Assets\admin\css\dung_chung\popup.css" />
+    <Content Include="Assets\admin\css\exam_result.css" />
+    <Content Include="Assets\admin\css\home.css" />
+    <Content Include="Assets\admin\css\login.css" />
+    <Content Include="Assets\admin\css\mon_thi.css" />
+    <Content Include="Assets\admin\css\profile.css" />
+    <Content Include="Assets\admin\css\sidebar.css" />
+    <Content Include="Assets\admin\css\student.css" />
+    <Content Include="Assets\admin\css\dung_chung\table2.css" />
+    <Content Include="Assets\admin\js\danh_sach_de\listTest.js" />
+    <Content Include="Assets\admin\js\danh_sach_de\listTest_popup.js" />
+    <Content Include="Assets\admin\js\ds_hoc_phan\ds_hoc_phan.js" />
+    <Content Include="Assets\admin\js\ds_hoc_phan\ds_hoc_phan_popup.js" />
+    <Content Include="Assets\admin\js\dung_chung\file_upload.js" />
+    <Content Include="Assets\admin\js\home\Home.js" />
+    <Content Include="Assets\admin\js\khung_de\frameTest_popup.js" />
+    <Content Include="Assets\admin\js\khung_de\frame_test.js" />
+    <Content Include="Assets\admin\js\khung_de\loadSelectSubject.js" />
+    <Content Include="Assets\admin\js\kq_thi\kq_thi.js" />
+    <Content Include="Assets\admin\js\mon\subject.js" />
+    <Content Include="Assets\admin\js\mon\subject_popup.js" />
+    <Content Include="Assets\admin\js\phong_thi\phong_thi.js" />
+    <Content Include="Assets\admin\js\phong_thi\phong_thi_popup.js" />
+    <Content Include="Assets\admin\js\sidebar.js" />
+    <Content Include="Assets\admin\js\student\student.js" />
+    <Content Include="Assets\admin\js\student\student_popup.js" />
+    <Content Include="Assets\admin\js\thong_tin_to_thi\thong_tin_to_thi.js" />
+    <Content Include="Assets\admin\js\to_thi\to_thi.js" />
+    <Content Include="Assets\student\thi\kq_thi.js" />
+    <Content Include="Assets\student\thi\thi.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\DACN_Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DACN_Model.edmx</DependentUpon>
+      <LastGenOutput>DACN_Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DACN_Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DACN_Model.edmx</DependentUpon>
+      <LastGenOutput>DACN_Model.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\AdHome\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LeftMenuSideBarPartial.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminLogin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Subject\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Subject\_AddSubjectPartialView.cshtml" />
+    <Content Include="Areas\Admin\Views\PrivateInfo\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Student\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shirt_and_Room\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ExamResult\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CreateExam\Index.cshtml" />
+    <EntityDeploy Include="Models\DACN_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DACN_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DACN_Model.edmx.diagram">
+      <DependentUpon>DACN_Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\Student\_PopUpFileUploaderPartialView.cshtml" />
+    <Content Include="Areas\Admin\Views\Student\_PopUpUpdatePartialView.cshtml" />
+    <Content Include="Areas\Admin\Views\FrameTest\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\FrameTest\_PopUpFrameTestPartialView.cshtml" />
+    <Content Include="Areas\Admin\Views\ListTest\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ListTest\_ListTest_PopUpFileUpload_PartialView.cshtml" />
+    <Content Include="Areas\Admin\Views\ReviewTest\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DsHocPhan\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\DsHocPhan\_DsHocPhan_PopUpFileUploaderPartialView.cshtml" />
+    <Content Include="Areas\Admin\Views\ToThi\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\thong_tin_to_thi\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ToChucThi\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shirt_and_Room\_PhongThi_CrudPopUp_PartialView.cshtml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\StudentLogin\Index.cshtml" />
+    <Content Include="Views\ChonMonThi\Index.cshtml" />
+    <Content Include="Views\Thi\Index.cshtml" />
+    <Content Include="Views\Thi\KetQuaThi.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\StudentHistory\" />
+    <Folder Include="App_Data\TestHistory\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\KetQuaThi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50250</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44332/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

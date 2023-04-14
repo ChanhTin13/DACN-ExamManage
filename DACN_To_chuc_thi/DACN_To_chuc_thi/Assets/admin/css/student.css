@@ -1,0 +1,58 @@
+/* .student-page{ 
+    border: 1px solid black;
+} */
+/*Nút thêm sv*/
+.btn-add-student-container{
+    height: 90px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.btn-add-student-container button{
+    width: 140px;
+    height: 40px; 
+    margin: 5px 10px;
+    cursor: pointer;
+    border-color: rgb(120, 120, 213);
+    color: #fff;
+    font-size: 16px;
+    background-color: rgb(114, 176, 231);
+}
+/*Lọc sinh viên*/
+.student-filter{
+    border: 1px solid black; 
+}
+.student-filter span{
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 20px; 
+}
+.filter{
+    margin-top: 15px;
+}
+.one-row-filter{
+    display: flex; 
+}
+.one-student-filter{
+    display: flex;
+    width: 300px;
+    margin: 5px 10px; 
+}
+.student-filter-name{
+    text-align: right;
+    width: 40%; 
+    margin-right: 5px; 
+    font-size: 18px;
+}
+.student-filter-input{
+    width: 70%; 
+}
+.student-filter-input input{
+    width: 150px;
+    height: 20px;
+}
+.student-filter-input select{
+    width: 150px;
+    height: 24px;
+}
+ 

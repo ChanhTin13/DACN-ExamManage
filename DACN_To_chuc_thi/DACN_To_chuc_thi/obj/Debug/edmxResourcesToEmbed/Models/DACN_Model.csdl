@@ -1,0 +1,652 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DACN_To_Chuc_ThiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="bai_lam">
+    <Key>
+      <PropertyRef Name="id_bai_lam" />
+    </Key>
+    <Property Name="id_bai_lam" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gio_lam" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="gio_nop" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="id_phieu_du_thi" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="phieu_du_thi" Relationship="Self.FK__bai_lam__id_phie__48CFD27E" FromRole="bai_lam" ToRole="phieu_du_thi" />
+    <NavigationProperty Name="ct_bai_lam" Relationship="Self.FK__ct_bai_la__id_ba__46E78A0C" FromRole="bai_lam" ToRole="ct_bai_lam" />
+  </EntityType>
+  <EntityType Name="bo_cau_hoi">
+    <Key>
+      <PropertyRef Name="id_bo_cau_hoi" />
+    </Key>
+    <Property Name="id_bo_cau_hoi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ten_bo_cau_hoi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id_de_thi" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="de_thi" Relationship="Self.FK__bo_cau_ho__id_de__4CA06362" FromRole="bo_cau_hoi" ToRole="de_thi" />
+    <NavigationProperty Name="Cau_hoi" Relationship="Self.FK__Cau_hoi__id_bo_c__5070F446" FromRole="bo_cau_hoi" ToRole="Cau_hoi" />
+  </EntityType>
+  <EntityType Name="Cau_hoi">
+    <Key>
+      <PropertyRef Name="id_cau_hoi" />
+    </Key>
+    <Property Name="id_cau_hoi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="noi_dung" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="diem" Type="Double" Nullable="false" />
+    <Property Name="id_bo_cau_hoi" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="bo_cau_hoi" Relationship="Self.FK__Cau_hoi__id_bo_c__5070F446" FromRole="Cau_hoi" ToRole="bo_cau_hoi" />
+    <NavigationProperty Name="lua_chon" Relationship="Self.FK__lua_chon__id_cau__45F365D3" FromRole="Cau_hoi" ToRole="lua_chon" />
+  </EntityType>
+  <EntityType Name="ct_bai_lam">
+    <Key>
+      <PropertyRef Name="id_bai_lam" />
+      <PropertyRef Name="id_lua_chon" />
+    </Key>
+    <Property Name="id_bai_lam" Type="Int32" Nullable="false" />
+    <Property Name="id_lua_chon" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="bai_lam" Relationship="Self.FK__ct_bai_la__id_ba__46E78A0C" FromRole="ct_bai_lam" ToRole="bai_lam" />
+    <NavigationProperty Name="lua_chon" Relationship="Self.FK__ct_bai_la__id_lu__4AB81AF0" FromRole="ct_bai_lam" ToRole="lua_chon" />
+    <NavigationProperty Name="ket_qua" Relationship="Self.FK__ket_qua__4D94879B" FromRole="ct_bai_lam" ToRole="ket_qua" />
+  </EntityType>
+  <EntityType Name="de_thi">
+    <Key>
+      <PropertyRef Name="id_de_thi" />
+    </Key>
+    <Property Name="id_de_thi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ma_de_thi" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ngay_tao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="id_khung_de" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="bo_cau_hoi" Relationship="Self.FK__bo_cau_ho__id_de__4CA06362" FromRole="de_thi" ToRole="bo_cau_hoi" />
+    <NavigationProperty Name="khung_de_thi" Relationship="Self.FK__de_thi__id_khung__4F7CD00D" FromRole="de_thi" ToRole="khung_de_thi" />
+    <NavigationProperty Name="phieu_du_thi" Relationship="Self.FK__phieu_du___id_de__4BAC3F29" FromRole="de_thi" ToRole="phieu_du_thi" />
+  </EntityType>
+  <EntityType Name="ket_qua">
+    <Key>
+      <PropertyRef Name="id_ket_qua" />
+    </Key>
+    <Property Name="id_ket_qua" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="diem" Type="Int32" Nullable="false" />
+    <Property Name="id_lua_chon" Type="Int32" Nullable="false" />
+    <Property Name="id_bai_lam" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ct_bai_lam" Relationship="Self.FK__ket_qua__4D94879B" FromRole="ket_qua" ToRole="ct_bai_lam" />
+  </EntityType>
+  <EntityType Name="khung_de_thi">
+    <Key>
+      <PropertyRef Name="id_khung_de" />
+    </Key>
+    <Property Name="id_khung_de" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ten_khung_de" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="thoi_luong_thi" Type="Int32" Nullable="false" />
+    <Property Name="ngay_tao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="id_nguoi_dung" Type="Int32" Nullable="false" />
+    <Property Name="id_mon" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="de_thi" Relationship="Self.FK__de_thi__id_khung__4F7CD00D" FromRole="khung_de_thi" ToRole="de_thi" />
+    <NavigationProperty Name="Nguoi_dung" Relationship="Self.FK__khung_de___id_ng__44FF419A" FromRole="khung_de_thi" ToRole="Nguoi_dung" />
+    <NavigationProperty Name="mon" Relationship="DACN_To_Chuc_ThiModel.FK__khung_de___id_mo__440B1D61" FromRole="khung_de_thi" ToRole="mon" />
+  </EntityType>
+  <EntityType Name="lua_chon">
+    <Key>
+      <PropertyRef Name="id_lua_chon" />
+    </Key>
+    <Property Name="id_lua_chon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="noi_dung" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dung_hay_sai" Type="Boolean" Nullable="false" />
+    <Property Name="id_cau_hoi" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cau_hoi" Relationship="Self.FK__lua_chon__id_cau__45F365D3" FromRole="lua_chon" ToRole="Cau_hoi" />
+    <NavigationProperty Name="ct_bai_lam" Relationship="Self.FK__ct_bai_la__id_lu__4AB81AF0" FromRole="lua_chon" ToRole="ct_bai_lam" />
+  </EntityType>
+  <EntityType Name="Nguoi_dung">
+    <Key>
+      <PropertyRef Name="id_nguoi_dung" />
+    </Key>
+    <Property Name="id_nguoi_dung" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ho_ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ngay_sinh" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ngay_vao_lam" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="gioi_tinh" Type="Boolean" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mat_khau" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tinh_trang" Type="Boolean" Nullable="false" />
+    <Property Name="sdt" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cmnd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="khung_de_thi" Relationship="Self.FK__khung_de___id_ng__44FF419A" FromRole="Nguoi_dung" ToRole="khung_de_thi" />
+  </EntityType>
+  <EntityType Name="phieu_du_thi">
+    <Key>
+      <PropertyRef Name="id_phieu_du_thi" />
+    </Key>
+    <Property Name="id_phieu_du_thi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="het_gio" Type="Boolean" Nullable="false" />
+    <Property Name="da_thi" Type="Boolean" Nullable="false" />
+    <Property Name="id_phong_thi" Type="Int32" Nullable="false" />
+    <Property Name="id_de_thi" Type="Int32" Nullable="false" />
+    <Property Name="id_mon" Type="Int32" Nullable="false" />
+    <Property Name="mssv" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="bai_lam" Relationship="Self.FK__bai_lam__id_phie__48CFD27E" FromRole="phieu_du_thi" ToRole="bai_lam" />
+    <NavigationProperty Name="de_thi" Relationship="Self.FK__phieu_du___id_de__4BAC3F29" FromRole="phieu_du_thi" ToRole="de_thi" />
+    <NavigationProperty Name="phong_thi" Relationship="Self.FK__phieu_du___id_ph__47DBAE45" FromRole="phieu_du_thi" ToRole="phong_thi" />
+    <NavigationProperty Name="Thong_tin_hoc_phan" Relationship="Self.FK__phieu_du_thi__4E88ABD4" FromRole="phieu_du_thi" ToRole="Thong_tin_hoc_phan" />
+    <Property Name="id_to_thi" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="to_thi" Relationship="DACN_To_Chuc_ThiModel.FK__phieu_du___id_to__4222D4EF" FromRole="phieu_du_thi" ToRole="to_thi" />
+  </EntityType>
+  <EntityType Name="phong_thi">
+    <Key>
+      <PropertyRef Name="id_phong_thi" />
+    </Key>
+    <Property Name="id_phong_thi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ten_phong_thi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="so_luong_may" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="phieu_du_thi" Relationship="Self.FK__phieu_du___id_ph__47DBAE45" FromRole="phong_thi" ToRole="phieu_du_thi" />
+  </EntityType>
+  <EntityType Name="sinh_vien">
+    <Key>
+      <PropertyRef Name="mssv" />
+    </Key>
+    <Property Name="mssv" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ho_ten" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ngay_sinh" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="gioi_tinh" Type="Boolean" Nullable="false" />
+    <Property Name="lop" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="mat_khau" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tinh_trang" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Thong_tin_hoc_phan" Relationship="Self.FK__Thong_tin___mssv__49C3F6B7" FromRole="sinh_vien" ToRole="Thong_tin_hoc_phan" />
+  </EntityType>
+  <EntityType Name="Thong_tin_hoc_phan">
+    <Key>
+      <PropertyRef Name="id_mon" />
+      <PropertyRef Name="mssv" />
+    </Key>
+    <Property Name="id_mon" Type="Int32" Nullable="false" />
+    <Property Name="mssv" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nhom_hoc_phan" Type="Int32" Nullable="false" />
+    <Property Name="co_phieu_du_thi" Type="Boolean" Nullable="false" />
+    <Property Name="da_thi" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="phieu_du_thi" Relationship="Self.FK__phieu_du_thi__4E88ABD4" FromRole="Thong_tin_hoc_phan" ToRole="phieu_du_thi" />
+    <NavigationProperty Name="sinh_vien" Relationship="Self.FK__Thong_tin___mssv__49C3F6B7" FromRole="Thong_tin_hoc_phan" ToRole="sinh_vien" />
+    <NavigationProperty Name="mon" Relationship="DACN_To_Chuc_ThiModel.FK__Thong_tin__id_mo__4316F928" FromRole="Thong_tin_hoc_phan" ToRole="mon" />
+  </EntityType>
+  <Association Name="FK__bai_lam__id_phie__48CFD27E">
+    <End Role="phieu_du_thi" Type="Self.phieu_du_thi" Multiplicity="1" />
+    <End Role="bai_lam" Type="Self.bai_lam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="phieu_du_thi">
+        <PropertyRef Name="id_phieu_du_thi" />
+      </Principal>
+      <Dependent Role="bai_lam">
+        <PropertyRef Name="id_phieu_du_thi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ct_bai_la__id_ba__46E78A0C">
+    <End Role="bai_lam" Type="Self.bai_lam" Multiplicity="1" />
+    <End Role="ct_bai_lam" Type="Self.ct_bai_lam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bai_lam">
+        <PropertyRef Name="id_bai_lam" />
+      </Principal>
+      <Dependent Role="ct_bai_lam">
+        <PropertyRef Name="id_bai_lam" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__bo_cau_ho__id_de__4CA06362">
+    <End Role="de_thi" Type="Self.de_thi" Multiplicity="1" />
+    <End Role="bo_cau_hoi" Type="Self.bo_cau_hoi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="de_thi">
+        <PropertyRef Name="id_de_thi" />
+      </Principal>
+      <Dependent Role="bo_cau_hoi">
+        <PropertyRef Name="id_de_thi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cau_hoi__id_bo_c__5070F446">
+    <End Role="bo_cau_hoi" Type="Self.bo_cau_hoi" Multiplicity="1" />
+    <End Role="Cau_hoi" Type="Self.Cau_hoi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bo_cau_hoi">
+        <PropertyRef Name="id_bo_cau_hoi" />
+      </Principal>
+      <Dependent Role="Cau_hoi">
+        <PropertyRef Name="id_bo_cau_hoi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__lua_chon__id_cau__45F365D3">
+    <End Role="Cau_hoi" Type="Self.Cau_hoi" Multiplicity="1" />
+    <End Role="lua_chon" Type="Self.lua_chon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cau_hoi">
+        <PropertyRef Name="id_cau_hoi" />
+      </Principal>
+      <Dependent Role="lua_chon">
+        <PropertyRef Name="id_cau_hoi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ct_bai_la__id_lu__4AB81AF0">
+    <End Role="lua_chon" Type="Self.lua_chon" Multiplicity="1" />
+    <End Role="ct_bai_lam" Type="Self.ct_bai_lam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="lua_chon">
+        <PropertyRef Name="id_lua_chon" />
+      </Principal>
+      <Dependent Role="ct_bai_lam">
+        <PropertyRef Name="id_lua_chon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ket_qua__4D94879B">
+    <End Role="ct_bai_lam" Type="Self.ct_bai_lam" Multiplicity="1" />
+    <End Role="ket_qua" Type="Self.ket_qua" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ct_bai_lam">
+        <PropertyRef Name="id_bai_lam" />
+        <PropertyRef Name="id_lua_chon" />
+      </Principal>
+      <Dependent Role="ket_qua">
+        <PropertyRef Name="id_bai_lam" />
+        <PropertyRef Name="id_lua_chon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__de_thi__id_khung__4F7CD00D">
+    <End Role="khung_de_thi" Type="Self.khung_de_thi" Multiplicity="1" />
+    <End Role="de_thi" Type="Self.de_thi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="khung_de_thi">
+        <PropertyRef Name="id_khung_de" />
+      </Principal>
+      <Dependent Role="de_thi">
+        <PropertyRef Name="id_khung_de" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__phieu_du___id_de__4BAC3F29">
+    <End Role="de_thi" Type="Self.de_thi" Multiplicity="1" />
+    <End Role="phieu_du_thi" Type="Self.phieu_du_thi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="de_thi">
+        <PropertyRef Name="id_de_thi" />
+      </Principal>
+      <Dependent Role="phieu_du_thi">
+        <PropertyRef Name="id_de_thi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__khung_de___id_ng__44FF419A">
+    <End Role="Nguoi_dung" Type="Self.Nguoi_dung" Multiplicity="1" />
+    <End Role="khung_de_thi" Type="Self.khung_de_thi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nguoi_dung">
+        <PropertyRef Name="id_nguoi_dung" />
+      </Principal>
+      <Dependent Role="khung_de_thi">
+        <PropertyRef Name="id_nguoi_dung" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__phieu_du___id_ph__47DBAE45">
+    <End Role="phong_thi" Type="Self.phong_thi" Multiplicity="1" />
+    <End Role="phieu_du_thi" Type="Self.phieu_du_thi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="phong_thi">
+        <PropertyRef Name="id_phong_thi" />
+      </Principal>
+      <Dependent Role="phieu_du_thi">
+        <PropertyRef Name="id_phong_thi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__phieu_du_thi__4E88ABD4">
+    <End Role="Thong_tin_hoc_phan" Type="Self.Thong_tin_hoc_phan" Multiplicity="1" />
+    <End Role="phieu_du_thi" Type="Self.phieu_du_thi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Thong_tin_hoc_phan">
+        <PropertyRef Name="id_mon" />
+        <PropertyRef Name="mssv" />
+      </Principal>
+      <Dependent Role="phieu_du_thi">
+        <PropertyRef Name="id_mon" />
+        <PropertyRef Name="mssv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Thong_tin___mssv__49C3F6B7">
+    <End Role="sinh_vien" Type="Self.sinh_vien" Multiplicity="1" />
+    <End Role="Thong_tin_hoc_phan" Type="Self.Thong_tin_hoc_phan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sinh_vien">
+        <PropertyRef Name="mssv" />
+      </Principal>
+      <Dependent Role="Thong_tin_hoc_phan">
+        <PropertyRef Name="mssv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DACN_To_Chuc_ThiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="bai_lam" EntityType="Self.bai_lam" />
+    <EntitySet Name="bo_cau_hoi" EntityType="Self.bo_cau_hoi" />
+    <EntitySet Name="Cau_hoi" EntityType="Self.Cau_hoi" />
+    <EntitySet Name="ct_bai_lam" EntityType="Self.ct_bai_lam" />
+    <EntitySet Name="de_thi" EntityType="Self.de_thi" />
+    <EntitySet Name="ket_qua" EntityType="Self.ket_qua" />
+    <EntitySet Name="khung_de_thi" EntityType="Self.khung_de_thi" />
+    <EntitySet Name="lua_chon" EntityType="Self.lua_chon" />
+    <EntitySet Name="Nguoi_dung" EntityType="Self.Nguoi_dung" />
+    <EntitySet Name="phieu_du_thi" EntityType="Self.phieu_du_thi" />
+    <EntitySet Name="phong_thi" EntityType="Self.phong_thi" />
+    <EntitySet Name="sinh_vien" EntityType="Self.sinh_vien" />
+    <EntitySet Name="Thong_tin_hoc_phan" EntityType="Self.Thong_tin_hoc_phan" />
+    <AssociationSet Name="FK__bai_lam__id_phie__48CFD27E" Association="Self.FK__bai_lam__id_phie__48CFD27E">
+      <End Role="phieu_du_thi" EntitySet="phieu_du_thi" />
+      <End Role="bai_lam" EntitySet="bai_lam" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ct_bai_la__id_ba__46E78A0C" Association="Self.FK__ct_bai_la__id_ba__46E78A0C">
+      <End Role="bai_lam" EntitySet="bai_lam" />
+      <End Role="ct_bai_lam" EntitySet="ct_bai_lam" />
+    </AssociationSet>
+    <AssociationSet Name="FK__bo_cau_ho__id_de__4CA06362" Association="Self.FK__bo_cau_ho__id_de__4CA06362">
+      <End Role="de_thi" EntitySet="de_thi" />
+      <End Role="bo_cau_hoi" EntitySet="bo_cau_hoi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cau_hoi__id_bo_c__5070F446" Association="Self.FK__Cau_hoi__id_bo_c__5070F446">
+      <End Role="bo_cau_hoi" EntitySet="bo_cau_hoi" />
+      <End Role="Cau_hoi" EntitySet="Cau_hoi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__lua_chon__id_cau__45F365D3" Association="Self.FK__lua_chon__id_cau__45F365D3">
+      <End Role="Cau_hoi" EntitySet="Cau_hoi" />
+      <End Role="lua_chon" EntitySet="lua_chon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ct_bai_la__id_lu__4AB81AF0" Association="Self.FK__ct_bai_la__id_lu__4AB81AF0">
+      <End Role="lua_chon" EntitySet="lua_chon" />
+      <End Role="ct_bai_lam" EntitySet="ct_bai_lam" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ket_qua__4D94879B" Association="Self.FK__ket_qua__4D94879B">
+      <End Role="ct_bai_lam" EntitySet="ct_bai_lam" />
+      <End Role="ket_qua" EntitySet="ket_qua" />
+    </AssociationSet>
+    <AssociationSet Name="FK__de_thi__id_khung__4F7CD00D" Association="Self.FK__de_thi__id_khung__4F7CD00D">
+      <End Role="khung_de_thi" EntitySet="khung_de_thi" />
+      <End Role="de_thi" EntitySet="de_thi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__phieu_du___id_de__4BAC3F29" Association="Self.FK__phieu_du___id_de__4BAC3F29">
+      <End Role="de_thi" EntitySet="de_thi" />
+      <End Role="phieu_du_thi" EntitySet="phieu_du_thi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__khung_de___id_ng__44FF419A" Association="Self.FK__khung_de___id_ng__44FF419A">
+      <End Role="Nguoi_dung" EntitySet="Nguoi_dung" />
+      <End Role="khung_de_thi" EntitySet="khung_de_thi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__phieu_du___id_ph__47DBAE45" Association="Self.FK__phieu_du___id_ph__47DBAE45">
+      <End Role="phong_thi" EntitySet="phong_thi" />
+      <End Role="phieu_du_thi" EntitySet="phieu_du_thi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__phieu_du_thi__4E88ABD4" Association="Self.FK__phieu_du_thi__4E88ABD4">
+      <End Role="Thong_tin_hoc_phan" EntitySet="Thong_tin_hoc_phan" />
+      <End Role="phieu_du_thi" EntitySet="phieu_du_thi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Thong_tin___mssv__49C3F6B7" Association="Self.FK__Thong_tin___mssv__49C3F6B7">
+      <End Role="sinh_vien" EntitySet="sinh_vien" />
+      <End Role="Thong_tin_hoc_phan" EntitySet="Thong_tin_hoc_phan" />
+    </AssociationSet>
+    <EntitySet Name="to_thi" EntityType="DACN_To_Chuc_ThiModel.to_thi" />
+    <AssociationSet Name="FK__phieu_du___id_to__4222D4EF" Association="DACN_To_Chuc_ThiModel.FK__phieu_du___id_to__4222D4EF">
+      <End Role="to_thi" EntitySet="to_thi" />
+      <End Role="phieu_du_thi" EntitySet="phieu_du_thi" />
+    </AssociationSet>
+    <FunctionImport Name="Account_Login" ReturnType="Collection(Boolean)">
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="mat_khau" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddFrameTest">
+      <Parameter Name="ten_khung_de" Mode="In" Type="String" />
+      <Parameter Name="thoi_luong_thi" Mode="In" Type="Int32" />
+      <Parameter Name="id_mon" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="deleteStuById">
+      <Parameter Name="mssv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="deleteTestById">
+      <Parameter Name="id_de_thi" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="get_all_subject" ReturnType="Collection(DACN_To_Chuc_ThiModel.get_all_subject_Result)" />
+    <FunctionImport Name="get_student_by_pagination" ReturnType="Collection(DACN_To_Chuc_ThiModel.get_student_by_pagination_Result)">
+      <Parameter Name="page_number" Mode="In" Type="Int32" />
+      <Parameter Name="show_number" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="get_subject_by_pagination" ReturnType="Collection(DACN_To_Chuc_ThiModel.get_subject_by_pagination_Result)">
+      <Parameter Name="page_number" Mode="In" Type="Int32" />
+      <Parameter Name="show_number" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getAllTestByIdFrame" ReturnType="Collection(DACN_To_Chuc_ThiModel.getAllTestByIdFrame_Result)">
+      <Parameter Name="id_khung" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getAmountQuestion" ReturnType="Collection(Int32)">
+      <Parameter Name="id_de" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getAmountTestById" ReturnType="Collection(Int32)">
+      <Parameter Name="id_khung_de" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getListOptionByIdQuestion" ReturnType="Collection(DACN_To_Chuc_ThiModel.getListOptionByIdQuestion_Result)">
+      <Parameter Name="id_cau_hoi" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getListQuestionByIdGroupTest" ReturnType="Collection(DACN_To_Chuc_ThiModel.getListQuestionByIdGroupTest_Result)">
+      <Parameter Name="id_bo_cau_hoi" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getSubjectName" ReturnType="Collection(String)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getTestGroupContentByIdTest" ReturnType="Collection(DACN_To_Chuc_ThiModel.getTestGroupContentByIdTest_Result)">
+      <Parameter Name="id_de" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="getTestInfoById" ReturnType="Collection(DACN_To_Chuc_ThiModel.getTestInfoById_Result)">
+      <Parameter Name="id_de" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="isExistedStudent" ReturnType="Collection(Boolean)">
+      <Parameter Name="mssv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="isTestDeletable" ReturnType="Collection(Boolean)">
+      <Parameter Name="id_de_thi" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="kiemTraMonHocKhiNhapDsHp" ReturnType="Collection(Boolean)">
+      <Parameter Name="id_mon" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="kiemTraSvKhiNhapDsHp" ReturnType="Collection(Boolean)">
+      <Parameter Name="mssv" Mode="In" Type="String" />
+      <Parameter Name="id_mon" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="stuGetById" ReturnType="Collection(DACN_To_Chuc_ThiModel.stuGetById_Result)">
+      <Parameter Name="mssv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="them_mon">
+      <Parameter Name="ten_mon" Mode="In" Type="String" />
+      <Parameter Name="stc" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="themBoCauHoi" ReturnType="Collection(Decimal)">
+      <Parameter Name="ten_bo_cau_hoi" Mode="In" Type="String" />
+      <Parameter Name="id_de_thi" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="themCauHoi" ReturnType="Collection(Decimal)">
+      <Parameter Name="noi_dung" Mode="In" Type="String" />
+      <Parameter Name="diem" Mode="In" Type="Double" />
+      <Parameter Name="id_bo_cau_hoi" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="themDeThi" ReturnType="Collection(Decimal)">
+      <Parameter Name="ma_de_thi" Mode="In" Type="String" />
+      <Parameter Name="id_khung_de" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="themDsHp">
+      <Parameter Name="id_mon" Mode="In" Type="Int32" />
+      <Parameter Name="mssv" Mode="In" Type="String" />
+      <Parameter Name="nhomhp" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="themLuaChon">
+      <Parameter Name="noi_dung" Mode="In" Type="String" />
+      <Parameter Name="dung_hay_sai" Mode="In" Type="Boolean" />
+      <Parameter Name="id_cau_hoi" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="themSV">
+      <Parameter Name="mssv" Mode="In" Type="String" />
+      <Parameter Name="ho_ten" Mode="In" Type="String" />
+      <Parameter Name="ngay_sinh" Mode="In" Type="DateTime" />
+      <Parameter Name="gioi_tinh" Mode="In" Type="Boolean" />
+      <Parameter Name="lop" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateFrameTest">
+      <Parameter Name="id_khung" Mode="In" Type="Int32" />
+      <Parameter Name="ten_khung_de" Mode="In" Type="String" />
+      <Parameter Name="thoi_luong_thi" Mode="In" Type="Int32" />
+      <Parameter Name="id_mon" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateStudent">
+      <Parameter Name="mssv" Mode="In" Type="String" />
+      <Parameter Name="ho_ten" Mode="In" Type="String" />
+      <Parameter Name="ngay_sinh" Mode="In" Type="DateTime" />
+      <Parameter Name="gioi_tinh" Mode="In" Type="Boolean" />
+      <Parameter Name="lop" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateSubject">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="ten_mon" Mode="In" Type="String" />
+      <Parameter Name="stc" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="mons" EntityType="DACN_To_Chuc_ThiModel.mon" />
+    <AssociationSet Name="FK__khung_de___id_mo__440B1D61" Association="DACN_To_Chuc_ThiModel.FK__khung_de___id_mo__440B1D61">
+      <End Role="mon" EntitySet="mons" />
+      <End Role="khung_de_thi" EntitySet="khung_de_thi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Thong_tin__id_mo__4316F928" Association="DACN_To_Chuc_ThiModel.FK__Thong_tin__id_mo__4316F928">
+      <End Role="mon" EntitySet="mons" />
+      <End Role="Thong_tin_hoc_phan" EntitySet="Thong_tin_hoc_phan" />
+    </AssociationSet>
+    <FunctionImport Name="layThongTinTrcKhiThiBangMssv" ReturnType="Collection(DACN_To_Chuc_ThiModel.layThongTinTrcKhiThiBangMssv_Result)">
+      <Parameter Name="mssv" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="to_thi">
+    <Key>
+      <PropertyRef Name="id_to_thi" />
+    </Key>
+    <Property Name="id_to_thi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ten_to_thi" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ngay_thi" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="phieu_du_thi" Relationship="DACN_To_Chuc_ThiModel.FK__phieu_du___id_to__4222D4EF" FromRole="to_thi" ToRole="phieu_du_thi" />
+    <Property Name="trang_thai" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK__phieu_du___id_to__4222D4EF">
+    <End Type="DACN_To_Chuc_ThiModel.to_thi" Role="to_thi" Multiplicity="1" />
+    <End Type="DACN_To_Chuc_ThiModel.phieu_du_thi" Role="phieu_du_thi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="to_thi">
+        <PropertyRef Name="id_to_thi" />
+      </Principal>
+      <Dependent Role="phieu_du_thi">
+        <PropertyRef Name="id_to_thi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="get_all_subject_Result">
+    <Property Type="Int32" Name="id_mon" Nullable="false" />
+    <Property Type="String" Name="ten_mon" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="stc" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="get_student_by_pagination_Result">
+    <Property Type="String" Name="mssv" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ho_ten" Nullable="false" MaxLength="30" />
+    <Property Type="DateTime" Name="ngay_sinh" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="gioi_tinh" Nullable="false" />
+    <Property Type="String" Name="lop" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="mat_khau" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="tinh_trang" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="get_subject_by_pagination_Result">
+    <Property Type="Int32" Name="id_mon" Nullable="false" />
+    <Property Type="String" Name="ten_mon" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="stc" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getAllTestByIdFrame_Result">
+    <Property Type="Int32" Name="id_de_thi" Nullable="false" />
+    <Property Type="String" Name="ma_de_thi" Nullable="false" MaxLength="10" />
+    <Property Type="DateTime" Name="ngay_tao" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="id_khung_de" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getListOptionByIdQuestion_Result">
+    <Property Type="Int32" Name="id_lua_chon" Nullable="false" />
+    <Property Type="String" Name="noi_dung" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="dung_hay_sai" Nullable="false" />
+    <Property Type="Int32" Name="id_cau_hoi" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getListQuestionByIdGroupTest_Result">
+    <Property Type="Int32" Name="id_cau_hoi" Nullable="false" />
+    <Property Type="String" Name="noi_dung" Nullable="false" MaxLength="500" />
+    <Property Type="Double" Name="diem" Nullable="false" />
+    <Property Type="Int32" Name="id_bo_cau_hoi" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getTestGroupContentByIdTest_Result">
+    <Property Type="Int32" Name="id_bo_cau_hoi" Nullable="false" />
+    <Property Type="String" Name="ten_bo_cau_hoi" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="id_de_thi" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="getTestInfoById_Result">
+    <Property Type="Int32" Name="id_de_thi" Nullable="false" />
+    <Property Type="String" Name="ma_de_thi" Nullable="false" MaxLength="10" />
+    <Property Type="DateTime" Name="ngay_tao" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="id_khung_de" Nullable="false" />
+    <Property Type="Int32" Name="id_khung_de1" Nullable="false" />
+    <Property Type="String" Name="ten_khung_de" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="thoi_luong_thi" Nullable="false" />
+    <Property Type="DateTime" Name="ngay_tao1" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="id_nguoi_dung" Nullable="false" />
+    <Property Type="Int32" Name="id_mon" Nullable="false" />
+    <Property Type="Int32" Name="id_mon1" Nullable="false" />
+    <Property Type="String" Name="ten_mon" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="stc" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="stuGetById_Result">
+    <Property Type="String" Name="mssv" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ho_ten" Nullable="false" MaxLength="30" />
+    <Property Type="DateTime" Name="ngay_sinh" Nullable="false" Precision="23" />
+    <Property Type="Boolean" Name="gioi_tinh" Nullable="false" />
+    <Property Type="String" Name="lop" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="mat_khau" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="tinh_trang" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="mon">
+    <Key>
+      <PropertyRef Name="id_mon" />
+    </Key>
+    <Property Name="id_mon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ten_mon" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="stc" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="khung_de_thi" Relationship="DACN_To_Chuc_ThiModel.FK__khung_de___id_mo__440B1D61" FromRole="mon" ToRole="khung_de_thi" />
+    <NavigationProperty Name="Thong_tin_hoc_phan" Relationship="DACN_To_Chuc_ThiModel.FK__Thong_tin__id_mo__4316F928" FromRole="mon" ToRole="Thong_tin_hoc_phan" />
+  </EntityType>
+  <Association Name="FK__khung_de___id_mo__440B1D61">
+    <End Type="DACN_To_Chuc_ThiModel.mon" Role="mon" Multiplicity="1" />
+    <End Type="DACN_To_Chuc_ThiModel.khung_de_thi" Role="khung_de_thi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mon">
+        <PropertyRef Name="id_mon" />
+      </Principal>
+      <Dependent Role="khung_de_thi">
+        <PropertyRef Name="id_mon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Thong_tin__id_mo__4316F928">
+    <End Type="DACN_To_Chuc_ThiModel.mon" Role="mon" Multiplicity="1" />
+    <End Type="DACN_To_Chuc_ThiModel.Thong_tin_hoc_phan" Role="Thong_tin_hoc_phan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mon">
+        <PropertyRef Name="id_mon" />
+      </Principal>
+      <Dependent Role="Thong_tin_hoc_phan">
+        <PropertyRef Name="id_mon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="layThongTinTrcKhiThiBangMssv_Result">
+    <Property Type="Int32" Name="id_phieu_du_thi" Nullable="false" />
+    <Property Type="String" Name="mssv" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ho_ten" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="ten_mon" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="ngay_thi" Nullable="false" Precision="23" />
+  </ComplexType>
+</Schema>

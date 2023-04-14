@@ -1,0 +1,110 @@
+:root{
+    --sidebar-width: 250px;
+}
+*{
+    margin: 0;
+    padding: 0; 
+    list-style: none;
+    text-decoration: none;
+} 
+body{
+    display: flex;
+    background: rgb(244 245 250);
+}
+#wrapper{   
+    width: 100%;
+    display: flex;
+    height: 100%; 
+}
+.sidebar{ 
+    left: 0;
+    top: 0;
+    width: var(--sidebar-width);
+    min-height: 100%;
+    background: #1b1e24; 
+    font-family: "Open Sans",Arial,Helvetica,Sans-Serif;
+    font-size: 18px;
+    font-weight: normal;
+    padding: 0px;
+    margin-left: 0px;  
+    z-index: 11;  
+    display: block;
+}
+.logo  img{ 
+    padding: 3px 15px;
+    width: 205px;
+    height: 62px;
+}
+.img-and-name{ 
+    border-top: 1px solid rgba(255,255, 255, 0.1); 
+    border-bottom: 1px solid black; 
+    color: #8b91a0;
+    padding:10px 20px;   
+    display: flex;
+    align-items: center;     
+}
+.img-and-name img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin-right: 15px; 
+} 
+.img-and-name:hover .name a{
+    color:#fff;
+    font-size: 19px;
+}
+.img-and-name:hover img{
+    width: 55px;
+    height: 55px; 
+}
+ul.item-container{
+    display: block; 
+}
+ul.item-container li.item { 
+    border-top: 1px solid rgba(255,255, 255, 0.1); 
+    border-bottom: 1px solid black;
+    line-height: 47px;
+    color: #8b91a0;
+    padding:5px 30px; 
+    overflow: hidden; 
+} 
+ul.item-container li.item:hover a {
+    color: #fff;
+    font-size: 19px; 
+} 
+ul.item-container li.item i{
+    margin-right: 10px;
+}
+ul.item-container li.item:hover i {
+    color: #fff;
+    font-size: 19px; 
+}
+ul.item-container li.item a {
+    box-sizing: border-box; 
+    color: #8b91a0;
+}
+ul.item-collapse-container li.item-collapse{
+    padding-left: 50px;
+}
+ul.item-collapse-container li.item-collapse:hover a{
+    color: #fff;
+}
+.collapse-container{
+    display: none;
+}
+#collapse:hover .collapse-container{
+    display: block;
+}
+.main-panel{  
+    padding: 0px 20px;
+    /* border: 1px solid #0f0f10;    */
+    /* width: calc(100% - var(--sidebar-width)); */
+    width: 100%;
+    margin: 0px auto;
+    min-height: 100vh;
+}
+
+.content{  
+    margin-top: 20px;
+ } 
+  

@@ -1,0 +1,67 @@
+﻿@model DACN_To_chuc_thi.Areas.Admin.CusModel.Test.OneTest
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<link href="~/Assets/admin/css/ds_cau_hoi.css" rel="stylesheet" />
+
+<div class="row">
+    <h2>Đề: @Model.ten_ma_de - Môn: @Model.ten_mon_hoc </h2>
+
+    <div class="show-ans">
+        <h3>Hiện đáp án</h3>
+        <label class="switch">
+            <input type="checkbox" checked>
+            <span class="slider round"></span>
+        </label>
+    </div>
+</div>
+<div class="test-container">
+    <div class="row">
+        <div class="info">Họ tên:..........Lớp:.............</div>
+        <div class="test-number">Đề: @Model.ten_ma_de </div>
+    </div>
+    <div class="one-content">
+        @{ var i = 1;}
+        @foreach (var bch in Model.noi_dung_de_thi)
+        {
+
+            <div class="one-gr">
+                <h2> @bch.ten_bo_cau_hoi </h2>
+                @foreach (var ch in bch.CauHoi_LuaChon)
+                {
+                    <div class="one-ques">
+                        <div class="ques">Câu @i: @ch.noi_dung</div>
+                        @{i++;  }
+                        <div class="ans-content">
+                            @foreach (var lc in ch.DsLuaChon)
+                            {
+                                if (lc.dung_hay_sai == true)
+                                {
+                                    <div class="ans right-ans">
+                                        <input type="radio" id="@lc.id_lua_chon" name="@ch.id_cau_hoi" checked>
+                                        <label for="1">@lc.noi_dung</label>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="ans">
+                                        <input type="radio" id="@lc.id_lua_chon" name="@ch.id_cau_hoi">
+                                        <label for="2">@lc.noi_dung</label>
+                                    </div>
+                                }
+                            }
+                             
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        }
+        
+
+    </div>
+</div>

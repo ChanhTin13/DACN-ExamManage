@@ -1,0 +1,137 @@
+﻿@model DACN_To_chuc_thi.Models.Nguoi_dung
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Assets/admin/css/profile.css" rel="stylesheet" />
+
+<div class="personal-profile-container">
+    <div class="info">
+        <a href="">Thông tin tài khoản</a>
+        <div class="name-and-working-day">
+
+            <div class="full-name" id="one-card">
+                <div class="label-info">
+                    <label>@Html.DisplayNameFor(model => model.ho_ten):</label>
+                </div>
+                <div class="real-info">
+                    <label>
+                        @Html.DisplayFor(model => model.ho_ten)
+                    </label>
+                </div>
+            </div>
+
+            <div class="working-day" id="one-card">
+                <div class="label-info">
+                    <label>@Html.DisplayNameFor(model => model.ngay_vao_lam):</label>
+                </div>
+                <div class="real-info">
+                    @{var date_get_work = Model.ngay_vao_lam.ToString("dd/MM/yyyy");}
+                    <label>@Html.DisplayFor(model => date_get_work)</label>
+                </div>
+            </div>
+
+            <div id="one-card">
+                <div class="label-info">
+                    <label>@Html.DisplayNameFor(model => model.gioi_tinh):</label>
+                </div>
+                <div class="real-info">
+                    @{
+                        var sex = Model.gioi_tinh;
+                        if (sex == true)
+                        {
+                            <label>Nam</label>
+                        }
+                        else
+                        {
+                            <label>Nữ</label>
+
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="change-info">
+
+        <div class="change-img-container">
+            <div class="img-container">
+                <img src="https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png"
+                     alt="">
+            </div>
+            <div class="verify-btn">
+                <button id="choose-img-btn" >Chọn ảnh</button>
+                <input id="input-choose-img" style="display:none" type="file" />
+            </div>
+        </div>
+        <div class="personal-info">
+            <form action="">
+                <div class="block-container">
+                    <div class="one-block">
+                        <div class="one-div">
+                            <div class="Attribute-name">
+                                <label for="gender">Giới tính:</label>
+                                <span>(*)</span>
+                            </div>
+                            <div class="Attribute-input">
+                                <select name="gender" id="gender" required>
+                                    <option value="choose-gender">Chọn giới tính</option>
+                                    <option value="man">Nam</option>
+                                    <option value="woman">Nữ</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="one-div">
+                            <div class="Attribute-name">
+                                <label for="birth">Ngày sinh:</label>
+                                <span>(*)</span>
+                            </div>
+                            <div class="Attribute-input">
+                                @{var birth_day = Model.ngay_sinh.ToString("yyyy-mm-dd");}
+                                @Html.TextBoxFor(model => birth_day, new { type = "date"  , value= birth_day })
+                                @*<input type="date" id="birth" name="birth" value="@birth_day" required>*@
+                            </div>
+                        </div>
+                        <div class="one-div">
+                            <div class="Attribute-name">
+                                <label for="email">Email:</label>
+                                <span>(*)</span>
+                            </div>
+                            <div class="Attribute-input">
+                                <input type="email" id="email" name="email" value="@Model.email" required>
+                            </div>
+                        </div>
+                        <div class="one-div">
+                            <div class="Attribute-name">
+                                <label for="phone-number">Số điện thoại:</label>
+                                <span>(*)</span>
+                            </div>
+                            <div class="Attribute-input">
+                                <input type="tel" id="phone-number" name="phone-number" value="@Model.sdt" required>
+                            </div>
+                        </div>
+                        <div class="one-div">
+                            <div class="Attribute-name">
+                                <label for="identity-card">CMND:</label>
+                                <span>(*)</span>
+                            </div>
+                            <div class="Attribute-input">
+                                <input type="text" id="identity-card" name="identity-card" value="@Model.cmnd" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="save-change">
+    <button id="save-btn">Lưu thông tin</button>
+</div> 
+<script>
+    const btn_choose_img = document.getElementById("choose-img-btn");
+    const input_choose_img = document.getElementById("input-choose-img");
+    
+    btn_choose_img.addEventListener('click', () => input_choose_img.click());
+</script>

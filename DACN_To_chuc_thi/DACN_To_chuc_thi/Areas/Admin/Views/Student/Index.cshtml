@@ -1,0 +1,187 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Assets/admin/css/dung_chung/table2.css" rel="stylesheet" />
+<link href="~/Assets/admin/css/dung_chung/file_upload.css" rel="stylesheet" />
+<link href="~/Assets/admin/css/student.css" rel="stylesheet" />
+<link href="~/Assets/admin/css/dung_chung/popup.css" rel="stylesheet" />
+
+
+@ViewBag.Message
+<div class="student-filter">
+    <span>Lọc theo:</span>
+    <div class="filter">
+        <form action="">
+            <div class="one-row-filter">
+                <div class="one-student-filter">
+                    <div class="student-filter-name"><label for="semester">Học kỳ:</label></div>
+                    <div class="student-filter-input">
+                        <select name="" id="semester" required>
+                            <option value="choose-semester">Chọn học kỳ</option>
+                            <option value="">1A</option>
+                            <option value="">1B</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="one-student-filter">
+                    <div class="student-filter-name"><label for="subject"></label>Môn:</div>
+                    <div class="student-filter-input">
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                </div>
+                <div class="one-student-filter">
+                    <div class="student-filter-name">
+                        <label for="subject-gr">Nhóm học phần</label>
+                    </div>
+                    <div class="student-filter-input">
+                        <input type="text" id="subject-gr" name="subject-gr" required>
+                    </div>
+                </div>
+            </div>
+            <div class="one-row-filter">
+                <div class="one-student-filter">
+                    <div class="student-filter-name">
+                        <label for="student-id">MSSV:</label>
+                    </div>
+                    <div class="student-filter-input">
+                        <input type="text" id="student-id" name="student-id" required>
+                    </div>
+                </div>
+                <div class="one-student-filter">
+                    <div class="student-filter-name">
+                        <label for="student-name">Họ tên:</label>
+                    </div>
+                    <div class="student-filter-input">
+                        <input type="text" id="student-name" name="student-name" required>
+                    </div>
+                </div>
+                <div class="one-student-filter">
+                    <div class="student-filter-name">
+                        <label for="student-k">Khóa:</label>
+                    </div>
+                    <div class="student-filter-input">
+                        <input type="text" id="student-k" name="student-k" required>
+                    </div>
+                </div>
+            </div>
+            <div class="one-row-filter">
+                <div class="one-student-filter">
+                    <div class="student-filter-name">
+                        <label for="has-exam">Chưa có đề thi:</label>
+                    </div>
+                    <div class="student-filter-input">
+                        <input style="width:50px;" type="checkbox" id="has-exam" name="has-exam">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="data-table-container">
+    <div class="row">
+        <span>Danh sách khung đề</span>
+        <div class="row-btn">
+            <button onclick="clearD();" id="btn-file-uploader" type="button">Nhập File SV</button>
+        </div>
+
+    </div>
+    <div id="custom-data-table">
+        <div>
+            <div class="choose-num-showed-row-container">
+                <lable>
+                    Hiển thị
+                    <select name="chon-so-luong-hien-thi" id="chon-so-luong-hien-thi">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                    </select>
+                    cột
+                </lable>
+            </div>
+        </div>
+        <div style="max-height:400px;overflow:auto;">
+            <table class="table table-striped">
+                <thead>
+                    <tr style="border-top: 1px solid #dddddd;">
+                        <th>MSSV</th>
+                        <th>Họ tên</th>
+                        <th>Lớp</th>
+                        <th>Ngày sinh</th>
+                        <th>Giới tính</th>
+                        <th colspan="2">Tác vụ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="7" style="text-align: center;font-weight: bold;">Không có dữ liệu</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="  khung-pagination">
+            <div class="showing-x-to-y">Hiển thị 1-10 trên <div id="so_luong_kq" style="margin:0px 10px"></div> kết quả</div>
+            <div class="dataTable_paginate">
+                <ul class="pagination">
+
+                    <li class="li-pagination ">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li class="li-pagination">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M15.75 19.5L8.25 12l7.5-7.5" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="li-pagination  choosed"><a href="#">1</a></li>
+                    <li class="li-pagination "><a href="#">2</a></li>
+                    <li class="li-pagination "><a href="#">3</a></li>
+                    <li class="li-pagination "><a href="#">4</a></li>
+                    <li class="li-pagination "><a href="#">5</a></li>
+
+                    <li class="li-pagination ">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li class="li-pagination">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_PopUpUpdatePartialView")
+@Html.Partial("_PopUpFileUploaderPartialView")
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script src="~/Assets/admin/js/student/student_popup.js"></script>
+<script src="~/Assets/admin/js/student/student.js"></script>

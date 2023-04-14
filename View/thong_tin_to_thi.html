@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/table2.css">
+    <link rel="stylesheet" href="css/dung_chung/popup.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://file1.hutech.edu.vn/file/editor/homepage/stories/hinh34/logo%20CMYK-01.png" alt="">
+            </div>
+            <div class="img-and-name">
+                <img src="https://media.gqmagazine.fr/photos/5c768b171109c5304e975cae/16:9/w_1280,c_limit/dragon%20ball.png"
+                    alt="">
+                <div class="name"><a>Broly</a> </div>
+
+            </div>
+            <ul class="item-container">
+                <li class="item">
+                    <i class="fa-solid fa-house-user"></i>
+                    <span href="#">Trang chủ</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-user"></i>
+                    <span href="profile.html">Hồ sơ cá nhân</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-users"></i>
+                    <span href="#">Sinh viên</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span href="#">Ngân hàng đề</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-inbox"></i>
+                    <span href="#">Tổ chức thi</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-file"></i>
+                    <span href="#">Kết quả thi</sp>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span href="#">Thống kê</span>
+                </li>
+                <li class="item" id="collapse">
+                    <i class="fa-solid fa-gears"></i>
+                    <span href="#">Thông tin thi</span>
+                    <div class="collapse-container">
+                        <ul class="item-collapse-container">
+                            <li class="item-collapse">
+                                <a>Môn thi</a>
+                            </li>
+                            <li class="item-collapse">
+                                <a>Học kỳ</a>
+                            </li>
+                            <li class="item-collapse">
+                                <a>Ca thi</a>
+                            </li>
+                            <li class="item-collapse">
+                                <a>Phòng thi</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="item">
+                    <i class="fa-sharp fa-solid fa-right-from-bracket fa-flip-horizontal"></i>
+                    <span href="#">Đăng xuất</span>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="main-panel">
+            <div class="content">
+                <div class="data-table-container">
+                    <div class="row">
+                        <span>Thông tin tổ thi 1</span>
+                          
+                    </div>
+                    <div id="custom-data-table">
+                        <div>
+                            <div class="choose-num-showed-row-container">
+                                <lable>
+                                    Hiển thị
+                                    <select name="chon-so-luong-hien-thi" id="chon-so-luong-hien-thi">
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                    cột
+                                </lable>
+                            </div>
+                        </div>
+                        <div style="max-height:500px;overflow:auto;">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr style="border-top: 1px solid #dddddd;"> 
+                                        <th>MSSV</th>
+                                        <th>Họ tên</th>
+                                        <th>Môn</th>
+                                        <th>Mã đề</th>
+                                        <th>Thời lượng thi</th>
+                                        <th >Tác vụ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                      
+                                    <tr> 
+                                        <td>12321</td>
+                                        <td>nguyen</td>
+                                        <td>Lập trình C++</td>
+                                        <td>001</td>
+                                        <td>60p</td>
+                                        <td class="table-delete-btn-column " style="border-left: 1px solid #bebebe;">
+                                            <svg id="icon-delete" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                class="w-6 h-6 icon">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm-.375 5.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                                            </svg>
+                                        </td> 
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="6" style="text-align: center !important ;font-weight: bold;">Không
+                                            có dữ liệu
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="  khung-pagination">
+                            <div class="showing-x-to-y">Hiển thị 1-10 trên 50 kết quả</div>
+                            <div class="dataTable_paginate">
+                                <ul class="pagination">
+
+                                    <li class="li-pagination ">
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+                                            </svg>
+                                        </a>
+                                    </li>
+
+                                    <li class="li-pagination">
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="li-pagination  choosed"><a href="#">1</a></li>
+                                    <li class="li-pagination "><a href="#">2</a></li>
+                                    <li class="li-pagination "><a href="#">3</a></li>
+                                    <li class="li-pagination "><a href="#">4</a></li>
+                                    <li class="li-pagination "><a href="#">5</a></li>
+
+                                    <li class="li-pagination ">
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                            </svg>
+                                        </a>
+                                    </li>
+
+                                    <li class="li-pagination">
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-6 h-6 icon">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form>
+                    <div class="popup-container" id="popup-add-container">
+                        <div class="popup-model" id="popup-model-add">
+                            <div class="popup-model-header">
+                                <h3 id="h3-add">Thêm Môn Học</h3>
+                                <h3 class="you-hide" id="h3-update">Sửa Môn Học</h3>
+                                <h3 id="quit">&times;</h3>
+                            </div>
+
+                            <div id="popup-model-body">
+                                <div class="one-row-attribute">
+                                    <div class="attribute-name"><label for=""></label>Tên khung đề:</div>
+                                    <input class="attribute-input" type="text" name="">
+                                </div>
+                                <div class="one-row-attribute">
+                                    <div class="attribute-name"><label for="">Môn:</label></div>
+                                    <input class="attribute-input" type="text" name="">
+                                </div>
+                                <div class="one-row-attribute">
+                                    <div class="attribute-name"><label for="">Thời lượng thi:</label></div>
+                                    <input class="attribute-input" type="text" name="">
+                                </div>
+                            </div>
+
+                            <div class="popup-submit">
+                                <input class="create-btn " id="btn-add" type="submit" value="Tạo">
+                                <input class="create-btn you-hide" id="btn-update" type="submit" value="Sửa">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const btn_add = document.getElementById('btn-them-khung-de');
+
+        const popup_add_container = document.getElementById('popup-add-container');
+        const popup_model_add = document.getElementById('popup-model-add');
+        const quit = document.getElementById('quit');
+
+        btn_add.addEventListener('click', () => {
+            popup_add_container.classList.toggle("show-popup");
+        });
+
+        quit.addEventListener('click', (e) => {
+            popup_add_container.classList.remove('show-popup');
+        });
+    </script>
+</body>
+ 
+</html>

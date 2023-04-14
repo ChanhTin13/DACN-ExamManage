@@ -1,0 +1,37 @@
+﻿<link href="~/Assets/admin/css/dung_chung/popup.css" rel="stylesheet" />
+
+<div class="popup-container " id="popup-add-container"  aria-labelledby="h3-add" >
+    <div class="popup-model" id="popup-model-add">
+        <div class="popup-model-header">
+             
+            <h3 id="h3-update">Sửa In4 Sinh Viên</h3>
+            <h3 id="quit">&times;</h3>
+        </div>
+
+        <div id="popup-model-body">
+            <div class="one-row-attribute">
+                <div class="attribute-name"><label for="ho_ten"></label>Họ tên:</div>
+                <input class="attribute-input" id="ho_ten" type="text" required="required">
+            </div>
+            <div class="one-row-attribute">
+                <div class="attribute-name"><label for="lop">Lớp:</label></div>
+                <input class="attribute-input"  id="lop" type="text"  aria-required="true" required="required">
+            </div>
+            <div class="one-row-attribute">
+                <div class="attribute-name"><label for="ngay_sinh"></label>Ngày sinh:</div>
+                <input class="attribute-input"  id="ngay_sinh" type="date" required="required">
+            </div>
+            <div class="one-row-attribute">
+                <div class="attribute-name"><label for="gioi_tinh"></label>Giới tính:</div>
+                <input class="attribute-input"  id="gioi_tinh" type="text" required="required">
+            </div>
+        </div>
+
+        <div class="popup-submit"> 
+            <input class="create-btn" id="btn-update" type="submit" value="Sửa" onclick="Update();">
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <title>DACN</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://file1.hutech.edu.vn/file/editor/homepage/stories/hinh34/logo%20CMYK-01.png" alt="">
+            </div>
+            <div class="img-and-name">
+                <img src="https://media.gqmagazine.fr/photos/5c768b171109c5304e975cae/16:9/w_1280,c_limit/dragon%20ball.png"
+                    alt="">
+                <div class="name"><a>Broly</a> </div>
+
+            </div>
+            <ul class="item-container">
+                <li class="item">
+                    <i class="fa-solid fa-house-user"></i>
+                    <span href="#">Trang chủ</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-user"></i>
+                    <span href="profile.html">Hồ sơ cá nhân</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-users"></i>
+                    <span href="#">Sinh viên</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span href="#">Ngân hàng đề</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span href="#">Tổ chức thi</span>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-file"></i>
+                    <span href="#">Kết quả thi</sp>
+                </li>
+                <li class="item">
+                    <i class="fa-solid fa-chart-simple"></i>
+                    <span href="#">Thống kê</span>
+                </li>
+                <li class="item" id="collapse">
+                    <i class="fa-solid fa-gears"></i>
+                    <span href="#">Thông tin thi</span>
+                    <div class="collapse-container">
+                        <ul class="item-collapse-container">
+                            <li class="item-collapse">
+                                <a>Môn thi</a>
+                            </li>
+                            <li class="item-collapse">
+                                <a>Học kỳ</a>
+                            </li>
+                            <li class="item-collapse">
+                                <a>Ca thi</a>
+                            </li>
+                            <li class="item-collapse">
+                                <a>Phòng thi</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="item">
+                    <i class="fa-sharp fa-solid fa-right-from-bracket fa-flip-horizontal"></i>
+                    <span href="#">Đăng xuất</span>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="main-panel">
+            <div class="content">
+                <div class="personal-profile-container">
+                    <div class="info">
+                        <a href="">Thông tin tài khoản</a>
+                        <div class="name-and-working-day">
+
+                            <div class="full-name" id="one-card">
+                                <div class="label-info">
+                                    <label>Họ và tên: </label>
+                                </div>
+                                <div class="real-info">
+                                    <label>Nguyen Van A</label>
+                                </div>
+                            </div>
+
+                            <div class="working-day" id="one-card">
+                                <div class="label-info">
+                                    <label>Ngày vào làm: </label>
+                                </div>
+                                <div class="real-info">
+                                    <label>01/10/2022</label>
+                                </div>
+                            </div>
+
+                            <div id="one-card">
+                                <div class="label-info">
+                                    <label>Giới tính: </label>
+                                </div>
+                                <div class="real-info">
+                                    <label>Nam</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="change-info">
+
+                        <div class="change-img-container">
+                            <div class="img-container">
+                                <img src="https://nextphim.com/wp-content/uploads/2019/03/review-bay-vien-ngoc-rong-sieu-cap-broly-8.jpg"
+                                    alt="">
+                            </div>
+                            <div class="verify-btn">
+                                <button id="choose-img-btn">Chọn ảnh</button>
+                            </div>
+                        </div>
+                        <div class="personal-info">
+                            <form action="">
+                                <div class="block-container">
+                                    <div class="one-block">
+                                        <div class="one-div">
+                                            <div class="Attribute-name"><label for="gender">Giới tính:</label>
+                                                <span>(*)</span>
+                                            </div>
+                                            <div class="Attribute-input">
+                                                <select name="gender" id="gender" required>
+                                                    <option value="choose-gender">Chọn giới tính</option>
+                                                    <option value="man">Nam</option>
+                                                    <option value="woman">Nữ</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="one-div">
+                                            <div class="Attribute-name"><label for="birth">Ngày sinh:</label>
+                                                <span>(*)</span>
+                                            </div>
+                                            <div class="Attribute-input">
+                                                <input type="date" id="birth" name="birth" required>
+                                            </div>
+                                        </div>
+                                        <div class="one-div">
+                                            <div class="Attribute-name"><label for="email">Email:</label>
+                                                <span>(*)</span>
+                                            </div>
+                                            <div class="Attribute-input">
+                                                <input type="email" id="email" name="email" required>
+                                            </div>
+                                        </div>
+                                        <div class="one-div">
+                                            <div class="Attribute-name"><label for="phone-number">Số điện thoại:</label>
+                                                <span>(*)</span>
+                                            </div>
+                                            <div class="Attribute-input">
+                                                <input type="tel" id="phone-number" name="phone-number" required>
+                                            </div>
+                                        </div>
+                                        <div class="one-div">
+                                            <div class="Attribute-name"><label for="identity-card">CMND:</label>
+                                                <span>(*)</span>
+                                            </div>
+                                            <div class="Attribute-input">
+                                                <input type="text" id="identity-card" name="identity-card" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="save-change">
+                    <button id="save-btn">Lưu thông tin</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

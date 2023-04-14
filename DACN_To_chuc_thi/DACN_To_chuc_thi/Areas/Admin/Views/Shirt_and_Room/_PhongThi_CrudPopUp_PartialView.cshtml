@@ -1,0 +1,31 @@
+﻿<link href="~/Assets/admin/css/dung_chung/popup.css" rel="stylesheet" />
+
+<div class="popup-container " id="popup-add-container" role="dialog" aria-labelledby="h3-add" aria-hidden="true" tabindex="-1">
+    <div class="popup-model" id="popup-model-add">
+        <div class="popup-model-header">
+
+            <h3 id="h3-add">Thêm Phòng</h3>
+            <h3 class="you-hide" id="h3-update">Sửa Phòng</h3>
+            <h3 id="quit">&times;</h3>
+        </div>
+
+        <div id="popup-model-body">
+            <div class="one-row-attribute">
+                <div class="attribute-name"><label for="ten_phong"></label>Tên phòng:</div>
+                <input class="attribute-input" id="ten_phong" type="text" required="required">
+            </div>
+            <div class="one-row-attribute">
+                <div class="attribute-name"><label for="so_may">Số máy:</label></div>
+                <input class="attribute-input" id="so_may" type="number" min="1" aria-required="true" required="required">
+            </div>
+        </div>
+
+        <div class="popup-submit">
+            <input class="create-btn" id="btn-add" type="submit" value="Thêm" onclick="return Add();">
+            <input class="create-btn you-hide" id="btn-update" type="submit" value="Sửa" onclick="Update();">
+        </div>
+    </div>
+</div>
+
+<script src="~/Assets/admin/js/phong_thi/phong_thi_popup.js"></script>
+

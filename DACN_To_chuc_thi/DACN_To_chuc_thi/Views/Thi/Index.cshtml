@@ -1,0 +1,135 @@
+﻿@model DACN_To_chuc_thi.Areas.Admin.CusModel.Test.OneTest
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Assets/admin/css/de_thi.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="exam-container">
+            <div id="exam-info">
+
+                <div class="exam-name">Kỳ Thi Kết Thúc Học Học Phần</div>
+                <div class="exam-subject" id="ten_mon_thi">Kỹ thuật lập trình</div>
+                <div class="exam-info-row">
+                    <div class="one-row-attribute">
+                        <div class="attribute-name">Sinh viên:</div>
+                        <div class="attribute-info" id="hoten">Nguyễn Văn A</div>
+                    </div>
+                    <div class="one-row-attribute">
+                        <div class="attribute-name">MSSV:</div>
+                        <div class="attribute-info" id="mssv">19110991</div>
+                    </div>
+                </div>
+                <div class="exam-info-row">
+                    <div class="one-row-attribute">
+                        <div class="attribute-name">Thời gian:</div>
+                        <div class="attribute-info" id="thoi_gian">90p</div>
+                    </div>
+                    <div class="one-row-attribute">
+                        <div class="attribute-name">Ngày thi:</div>
+                        <div class="attribute-info" id="ngay_thi">25/11/2022</div>
+                    </div>
+                </div>
+                <div class="exam-info-row">
+                    <div class="one-row-attribute">
+                        <div class="attribute-name">Giờ bắt đầu:</div>
+                        <div class="attribute-info" id="gio_bd">9:00</div>
+                    </div>
+                    <div class="one-row-attribute">
+                        <div class="attribute-name">Giờ kết thúc:</div>
+                        <div class="attribute-info" id="gio_kt">10:30</div>
+                    </div>
+                </div>
+                <div class="exam-info-row">
+                    <div class="one-row-attribute">
+                        <div class="attribute-name">Đề thi:</div>
+                        <div class="attribute-info" id="ma_de_thi">001</div>
+                    </div>
+                    <div class="one-row-attribute">
+                        <div class="attribute-name">Số câu</div>
+                        <div class="attribute-info" id="so_cau">40</div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="test-container">
+
+
+                @{ var i = 1;}
+                @foreach (var bch in Model.noi_dung_de_thi)
+                {
+
+                    <div class="one-group-question">
+
+                        <h3 style="font-size: 25px;">@bch.ten_bo_cau_hoi </h3>
+                        @foreach (var ch in bch.CauHoi_LuaChon)
+                        {
+                            <div class="one-question">
+
+                                <div class="question-container">
+                                    <div class="question-title" id="@ch.id_cau_hoi">Câu @i:</div>
+                                    <div class="question">@ch.noi_dung</div>
+                                </div>
+                                @{i++; }
+                                <div class="option-container">
+                                    @foreach (var lc in ch.DsLuaChon)
+                                    {
+                                        <div class="one-option">
+                                            <input type="radio" id="@lc.id_lua_chon" name="@ch.id_cau_hoi">
+                                            <label for="@lc.id_lua_chon">@lc.noi_dung</label><br>
+                                        </div>
+                                    }
+
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                }
+
+
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row-submit">
+                <input id="btn-save" type="submit" value="Lưu bài">
+                <a href="@Url.Action("KetQuaThi","Thi")"> <input id="btn-done" type="submit" value="Nộp bài" onclick="ChamThi();"></a>
+            </div>
+        </div>
+
+        <div class="ques-table">
+            @{ var i_ch = 1;}
+            @foreach (var bch in Model.noi_dung_de_thi)
+            {
+                foreach (var x in bch.CauHoi_LuaChon)
+                {
+                    <div class="one-cell">
+                        <div class="cjd"><a href="#@x.id_cau_hoi">@i_ch</a></div>
+                    </div>
+                    i_ch++;
+                }
+            }
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="~/Assets/student/thi/thi.js"></script>
+</body>
+
+</html>

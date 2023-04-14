@@ -1,0 +1,57 @@
+﻿
+
+@model DACN_To_chuc_thi.Models.DTO.FileModel
+
+<link href="~/Assets/admin/css/dung_chung/file_upload.css" rel="stylesheet" />
+
+@using (Html.BeginForm("Index", "DsHocPhan", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="popup-container" id="popup-file-uploader-container">
+        <div class="popup-model" id="popup-model-add">
+            <div class="popup-model-header">
+                <h3>Thêm DS Học Phần</h3>
+                <h3 id="quit-form-file-upload">&times;</h3>
+            </div>
+
+            <div class="popup-model-body">
+
+                <div class="card">
+                    <div class="top">
+                        <p>Chỉ hỗ trợ file Excel</p>
+                        <button id="save-btn" type="button">Lưu</button>
+                        <input id="file" type="submit" value="Lưu" />
+                    </div>
+
+                    <div class="drag-area">
+                        <span class="visible">
+                            Kéo thả file vào đây hoặc
+                            <span class="select" role="button">Chọn</span>
+                        </span>
+                        <span class="on-drop">Thả file vào đây</span>
+                        @Html.TextBoxFor(model => model.files, "", new { type = "file", name = "file", accept = ".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel", multiple = "multiple" }) <br />
+                        @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+                        @*<input id="file" name="file" type="file" class="file"
+                            accept=".doc, .docx, application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                            multiple />*@
+                    </div>
+
+                    <!-- file PREVIEW CONTAINER -->
+                    <div class="container"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+
+<script src="~/Assets/admin/js/dung_chung/file_upload.js"></script>
+<script>
+    const save_btn = document.getElementById('save-btn');
+    const save_input = document.getElementById('file');
+
+    save_btn.addEventListener('click', () => save_input.click());
+
+
+</script>

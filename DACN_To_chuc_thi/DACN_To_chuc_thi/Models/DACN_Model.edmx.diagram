@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1de14a096b7a4eedb8e75177f950ecfa" Name="Diagram1">
+        <EntityTypeShape EntityType="DACN_To_Chuc_ThiModel.bai_lam" Width="1.5" PointX="10.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACN_To_Chuc_ThiModel.bo_cau_hoi" Width="1.5" PointX="7.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACN_To_Chuc_ThiModel.Cau_hoi" Width="1.5" PointX="9.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACN_To_Chuc_ThiModel.ct_bai_lam" Width="1.5" PointX="14.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACN_To_Chuc_ThiModel.de_thi" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACN_To_Chuc_ThiModel.ket_qua" Width="1.5" PointX="16.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACN_To_Chuc_ThiModel.khung_de_thi" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACN_To_Chuc_ThiModel.lua_chon" Width="1.5" PointX="12" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACN_To_Chuc_ThiModel.Nguoi_dung" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACN_To_Chuc_ThiModel.phieu_du_thi" Width="1.5" PointX="8.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACN_To_Chuc_ThiModel.phong_thi" Width="1.5" PointX="6" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACN_To_Chuc_ThiModel.sinh_vien" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DACN_To_Chuc_ThiModel.Thong_tin_hoc_phan" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="DACN_To_Chuc_ThiModel.FK__bai_lam__id_phie__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="DACN_To_Chuc_ThiModel.FK__ct_bai_la__id_ba__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="DACN_To_Chuc_ThiModel.FK__bo_cau_ho__id_de__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="DACN_To_Chuc_ThiModel.FK__Cau_hoi__id_bo_c__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="DACN_To_Chuc_ThiModel.FK__lua_chon__id_cau__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="DACN_To_Chuc_ThiModel.FK__ct_bai_la__id_lu__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="DACN_To_Chuc_ThiModel.FK__ket_qua__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="DACN_To_Chuc_ThiModel.FK__de_thi__id_khung__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="DACN_To_Chuc_ThiModel.FK__phieu_du___id_de__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="DACN_To_Chuc_ThiModel.FK__khung_de___id_ng__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="DACN_To_Chuc_ThiModel.FK__phieu_du___id_ph__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="DACN_To_Chuc_ThiModel.FK__phieu_du_thi__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="DACN_To_Chuc_ThiModel.FK__Thong_tin___mssv__49C3F6B7" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DACN_To_Chuc_ThiModel.to_thi" Width="1.5" PointX="8.375" PointY="0.875" />
+        <AssociationConnector Association="DACN_To_Chuc_ThiModel.FK__phieu_du___id_to__4222D4EF" />
+        <EntityTypeShape EntityType="DACN_To_Chuc_ThiModel.mon" Width="1.5" PointX="0.75" PointY="5.375" />
+        <AssociationConnector Association="DACN_To_Chuc_ThiModel.FK__khung_de___id_mo__440B1D61" />
+        <AssociationConnector Association="DACN_To_Chuc_ThiModel.FK__Thong_tin__id_mo__4316F928" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,46 @@
+:root{
+    --card-width:25%;
+    --card-height:0px auto;
+}
+body{
+    background: rgb(244 245 250);
+}
+/*--------------Card----------------*/
+.card-row{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.card{
+    width: var(--card-width);
+    height: var(--card-height);
+    border: 1px solid white;
+    background: white;
+    border-radius: 20px;
+    padding: 28px 30px; 
+    box-shadow: 0px 0px 5px 1px #b8b4b4; 
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px;
+}  
+.card-body{
+    flex: 1 1 auto;
+    min-height: 1px; 
+}
+.card-text{
+    display: flex;
+    justify-content: space-between; 
+    width: 100%; 
+    font-size: 35px; 
+} 
+.icon{
+    color: #6e6d6d;
+    width: 40px;
+}
+.card-name{
+    font-size: 20px;
+}
+.chart-container{
+    padding: 25px 10px;
+    display: flex;
+}

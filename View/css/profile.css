@@ -1,0 +1,120 @@
+.personal-profile-container{ 
+    justify-content: space-between;
+    display: block;
+    position: relative;
+}
+.info{
+    min-height: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+.info a{ 
+    font-size: 25px;
+    display: flex;
+    color: black;
+    margin-left: 30px;
+    margin-bottom: 20px;
+} 
+.name-and-working-day{ 
+    margin-left: 10px;
+} 
+#one-card{
+    display: flex;
+    width: 500px;
+}
+.label-info {
+    text-align: right;
+    width: 30%;
+    margin-right: 10px;
+}
+.real-info{
+    font-weight: normal;
+    width: 70%;
+    text-align: left;
+}
+/*Khung trai*/
+.change-info{
+    display: flex;
+}
+.change-img-container{
+    width: 250px;  
+    margin-right: 20px;  
+    position: relative; 
+}
+.img-container{
+    margin-top: 15px; 
+}
+.img-container img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px dashed rgb(37, 142, 186);
+}
+.verify-btn{
+    margin-top: 20px;
+    position: absolute;
+    left: 33%;  
+}
+#choose-img-btn{ 
+    width: 80px;
+    height: 35px; 
+}
+
+/*khung ben phai*/
+.personal-info{
+    width:  85%; 
+}
+.one-block{
+    margin-top: 20px;
+    display: block;
+}
+.one-div{
+    display: flex;
+    width: 410px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin: 20px 20px;   
+}
+.Attribute-name{
+    width: 40%;
+}
+.Attribute-name span{
+    color: red;
+}
+.Attribute-input{
+    width: 60%;
+}
+.Attribute-input select{
+    width: 230px;
+    height: 25px;
+    font-size: 18px;
+}
+.Attribute-input input{
+    width: 240px;
+    height: 25px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid black;
+} 
+.Attribute-input input:focus{
+    outline: none;
+}
+/*save change*/
+.save-change{
+    position: fixed;
+    left: 90%;
+    top: 90%;
+}
+#save-btn{
+    color: #fff;
+    background-color: #006bb3;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 35px; 
+}

@@ -1,0 +1,141 @@
+.card {
+
+    width: 400px; 
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    overflow: hidden;
+    background: #fafbff;
+}
+
+.card .top { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.card p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #878a9a;
+}
+
+.card button {
+    outline: 0;
+    border: 0;
+        -webkit-appearence: none;
+	background: #5256ad;
+	color: #fff;
+	border-radius: 4px;
+	transition: 0.3s;
+	cursor: pointer;
+	font-weight: 400;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	font-size: 0.8rem;
+	padding: 8px 13px;
+}
+
+.card button:hover {
+	opacity: 0.8;
+}
+
+.card button:active {
+	transform: translateY(5px);
+}
+
+.card .drag-area {
+	width: 100%;
+	height: 160px;
+	border-radius: 5px;
+	border: 2px dashed #d5d5e1;
+	color: #c8c9dd;
+	font-size: 0.9rem;
+	font-weight: 500;
+	position: relative;
+	background: #dfe3f259;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+	-webkit-user-select: none;
+	margin-top: 10px;
+}
+
+.card .drag-area .visible {
+	font-size: 18px;
+}
+.card .select {
+    color: #5256ad;
+	margin-left: 5px;
+	cursor: pointer;
+	transition: 0.4s;
+}
+
+.card .select:hover {
+	opacity: 0.6;
+}
+
+.card .container {
+	width: 100%;
+	height: auto; 
+	display: block;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	max-height: 200px;
+	overflow-y: auto;
+	margin-top: 10px; 
+}
+
+.card .container .image {
+	width: calc(15% );
+	margin-right: 15px;
+	height: calc(15% );
+	position: relative; 
+    margin-bottom: 15px;
+}
+
+.card .container .image .file-and-file-attr img {
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+} 
+
+.card .container .image .file-and-file-attr span { 
+    position: absolute;
+    left: 360px;
+    top: -5px;
+    text-align: right;
+	font-size: 30px;
+	cursor: pointer;
+    color: black; 
+}
+.file-and-file-attr{
+    display: flex;
+}
+.file-attr{ 
+    width: 250px;
+    text-align: left;
+    display: block;
+    margin-left: 20px; 
+}
+.file-name{   
+    width: 100%; 
+}
+
+/* dragover class will used in drag and drop system */
+.card .drag-area.dragover {
+	background: rgba(0, 0, 0, 0.4);
+}
+
+.card .drag-area.dragover .on-drop {
+	display: inline;
+	font-size: 28px;
+}
+
+.card input,
+.card .drag-area .on-drop, 
+.card .drag-area.dragover .visible {
+	display: none;
+}

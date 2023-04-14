@@ -1,0 +1,144 @@
+:root{
+    --test-width:15%;
+    --test-height:210px;
+    --test-id-height:33px;
+    --test-name-height:145px;
+    --test-semester-container-height: 
+    calc( var(--test-height) - var(--test-id-height) - var(--test-name-height) );
+}
+/*Nút thêm*/
+.btn-add-test-container{
+    display: flex; 
+    margin: 10px 0px;
+    height: 50px;
+    justify-content: right;
+    align-items: center; 
+} 
+#create-test-btn{
+    width: 140px;
+    height: 40px; 
+    margin: 5px 10px;
+    cursor: pointer;
+    border-color: rgb(120, 120, 213);
+    color: #fff;
+    font-size: 20px;
+    background-color: rgb(114, 176, 231);
+}
+/*Bộ lọc*/
+.bank-filter-container{
+    border: 1px solid black;
+    margin: 10px 0px;
+    padding: 20px 30px;
+    border-radius: 20px;
+}
+.bank-filter-container span{
+    font-size: 22px;
+    font-weight: bold; 
+    text-transform: uppercase;
+}
+.one-bank-block{
+    display: block;
+    margin-top: 15px;
+}
+.one-bank-row{
+    display: flex;
+    margin-bottom: 10px; 
+ }
+.one-bank-filter{
+    display: flex;
+    width: 300px;
+    margin: 5px 10px;   
+}
+.bank-filter-name{
+    text-align: right;
+    width: 30%; 
+    margin-right: 5px; 
+    font-size: 18px; 
+}
+.bank-filter-input{
+    width: 70%; 
+    box-sizing: border-box;
+}
+.bank-filter-input input{
+    width: 200px;
+    height: 20px;
+}
+.btn-filter button{
+    width: 55px;
+    height: 25px;
+    margin-top: 4px;
+}
+/*Danh sách đề thi*/
+.list-test-container{ 
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+.list-test-container span{
+    font-size: 22px;
+    font-weight: bold;
+    padding: 0px 20px; 
+    text-transform: uppercase;
+}
+.one-row-list-test{
+    width: 100%;
+    display: flex;
+    margin: 10px 0px;
+}
+.one-test{
+    border: 1px solid black;
+    width: var(--test-width);
+    height: var(--test-height);
+    box-sizing: content-box;
+    margin: 15px 15px;
+    transition: all 0.1s; 
+    background: #ffffff;
+    border-radius: 10px;
+}
+.one-test:hover{ 
+    width: calc(  var(--test-width)  + 5px );
+    height: calc( var(--test-height)  + 5px );;
+    box-shadow: 10px 10px rgba(23, 22, 22,0.2);
+} 
+.test-id{ 
+    height: var(--test-id-height);
+    display: flex;
+    justify-content: center;
+    text-align: center;  
+    align-items: center;
+    border-bottom: 1px solid black;
+    font-size: 20px;
+    justify-content: center;
+}
+.test-name{ 
+    height: var(--test-name-height);
+    display: flex;
+    justify-content: center;
+    text-align: center;  
+    align-items: center;
+    border-bottom: 1px solid black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;   
+} 
+.test-semester-container{
+    display: flex;  
+    justify-content: center;
+    align-items: center; 
+    height: var(--test-semester-container-height); 
+    box-sizing: border-box;
+}
+.test-semester{ 
+    display: flex;
+    padding: 5px 5px;
+    align-items: center; 
+}
+.test-year{
+    padding: 5px 5px; 
+}
+#popup-model-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+
